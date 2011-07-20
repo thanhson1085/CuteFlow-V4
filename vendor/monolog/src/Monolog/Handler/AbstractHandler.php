@@ -18,8 +18,6 @@ use Monolog\Formatter\LineFormatter;
 /**
  * Base Handler class providing the Handler structure
  *
- * Classes extending it should (in most cases) only implement write($record)
- *
  * @author Jordi Boggiano <j.boggiano@seld.be>
  */
 abstract class AbstractHandler implements HandlerInterface
@@ -83,6 +81,9 @@ abstract class AbstractHandler implements HandlerInterface
      */
     public function popProcessor()
     {
+        if (!$this->processors) {
+            throw new \LogicException('You tried to pop from an empty processor stack.');
+        }
         return array_shift($this->processors);
     }
 

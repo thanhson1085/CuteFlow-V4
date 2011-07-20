@@ -18,9 +18,24 @@ namespace Monolog\Processor;
  */
 class WebProcessor
 {
+    protected $serverData;
+
+    /**
+     * @param mixed $serverData array or object w/ ArrayAccess that provides access to the $_SERVER data
+     */
+    public function __construct($serverData = null)
+    {
+        if (null === $serverData) {
+            $this->serverData =& $_SERVER;
+        } elseif (is_array($serverData) || $serverData instanceof \ArrayAccess) {
+            $this->serverData = $serverData;
+        } else {
+            throw new \UnexpectedValueException('$serverData must be an array or object implementing ArrayAccess.');
+        }
+    }
+
     /**
      * @param array $record
-     * @param HandlerInterface $handler
      * @return array
      */
     public function __invoke(array $record)
@@ -28,9 +43,9 @@ class WebProcessor
         $record['extra'] = array_merge(
             $record['extra'],
             array(
-                'url' => $_SERVER['REQUEST_URI'],
-                'ip' => $_SERVER['REMOTE_ADDR'],
-                'method' => $_SERVER['REQUEST_METHOD'],
+                'url'         => $this->serverData['REQUEST_URI'],
+                'ip'          => $this->serverData['REMOTE_ADDR'],
+                'http_method' => $this->serverData['REQUEST_METHOD'],
             )
         );
 

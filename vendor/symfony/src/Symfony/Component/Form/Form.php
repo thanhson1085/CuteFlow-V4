@@ -674,8 +674,11 @@ class Form implements \IteratorAggregate, FormInterface
      */
     public function isValid()
     {
-        if (!$this->isBound() || $this->hasErrors()) {
+        if (!$this->isBound()) {
+            throw new \LogicException('You cannot call isValid() on a form that is not bound.');
+        }
 
+        if ($this->hasErrors()) {
             return false;
         }
 

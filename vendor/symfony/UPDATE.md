@@ -1,10 +1,74 @@
 How to update your project?
 ===========================
 
-This document explains how to upgrade from one Symfony2 PR version to the next
+This document explains how to upgrade from one Symfony2 version to the next
 one. It only discusses changes that need to be done when using the "public"
 API of the framework. If you "hack" the core, you should probably follow the
 timeline closely anyway.
+
+RC3 to RC4
+----------
+* Annotation classes must be annotated with @Annotation 
+  (see the validator constraints for examples)
+
+* Annotations are not using the PHP autoloading but their own mechanism. This
+  allows much more control about possible failure states. To make your code
+  work, add the following lines at the end of your `autoload.php` file:
+
+        use Doctrine\Common\Annotations\AnnotationRegistry;
+
+        AnnotationRegistry::registerLoader(function($class) use ($loader) {
+            $loader->loadClass($class);
+            return class_exists($class, false);
+        });
+
+        AnnotationRegistry::registerFile(
+            __DIR__.'/../vendor/doctrine/lib/Doctrine/ORM/Mapping/Driver/DoctrineAnnotations.php'
+        );
+
+  The `$loader` variable is an instance of `UniversalClassLoader`.
+  Additionally you might have to adjust the ORM path to the
+  `DoctrineAnnotations.php`. If you are not using the `UniversalClassLoader`
+  see the [Doctrine Annotations
+  documentation](http://www.doctrine-project.org/docs/common/2.1/en/reference/annotations.html)
+  for more details on how to register annotations.
+
+beta5 to RC1
+------------
+
+* Renamed `Symfony\Bundle\FrameworkBundle\Command\Command` to
+  `Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand`
+
+* Removed the routing `AnnotGlobLoader` class
+
+* Some blocks in the Twig Form templates have been renamed to avoid
+  collisions:
+
+    * `container_attributes` to `widget_container_attributes`
+    * `attributes` to `widget_attributes`
+    * `options` to `widget_choice_options`
+
+* Event changes:
+
+    * All listeners must now be tagged with `kernel.event_listener` instead of
+      `kernel.listener`.
+    * Kernel events are now properly prefixed with `kernel` instead of `core`:
+
+        * Before:
+
+                <tag name="kernel.listener" event="core.request" method="onCoreRequest" />
+
+        * After:
+
+                <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
+
+        Note: the method can of course remain as `onCoreRequest`, but renaming it
+        as well for consistency with future projects makes sense.
+
+    * The `Symfony\Component\HttpKernel\CoreEvents` class has been renamed to
+      `Symfony\Component\HttpKernel\KernelEvents`
+
+* `TrueValidator` and `FalseValidator` constraints validators no longer accepts any value as valid data.
 
 beta4 to beta5
 --------------
@@ -28,7 +92,7 @@ beta4 to beta5
 
     * `Symfony\Component\HttpFoundation\File\File` has a new API:
 
-       * It now extends `\splFileInfo`:
+       * It now extends `\SplFileInfo`:
 
            * former `getName()` equivalent is `getBasename()`,
            * former `getDirectory()` equivalent is `getPath()`,
@@ -60,11 +124,11 @@ beta4 to beta5
 * The stack of Monolog handlers now bubbles the records by default. To stop
   the propagation you need to configure the bubbling explicitly.
 
-* Expanded the SerializerInterface, while reducing the number of public
+* Expanded the `SerializerInterface`, while reducing the number of public
   methods in the Serializer class itself breaking BC and adding component
   specific Exception classes.
 
-* The FileType Form class has been heavily changed:
+* The `FileType` Form class has been heavily changed:
 
     * The temporary storage has been removed.
 
@@ -86,11 +150,11 @@ beta4 to beta5
 
     Before:
 
-        `TwigBundle:Form:div_layout.html.twig`
+        TwigBundle:Form:div_layout.html.twig
 
     After:
 
-        `form_div_layout.html.twig`
+        form_div_layout.html.twig
 
 * All settings regarding the cache warmers have been removed.
 

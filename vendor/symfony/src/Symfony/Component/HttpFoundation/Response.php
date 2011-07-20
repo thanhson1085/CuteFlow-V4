@@ -161,11 +161,17 @@ class Response
     /**
      * Sets the response content
      *
-     * @param string $content
+     * Valid types are strings, numbers, and objects that implement a __toString() method.
+     *
+     * @param mixed $content
      */
     public function setContent($content)
     {
-        $this->content = $content;
+        if (null !== $content && !is_string($content) && !is_numeric($content) && !is_callable(array($content, '__toString'))) {
+            throw new \UnexpectedValueException('The Response content must be a string or object implementing __toString(), "'.gettype($content).'" given.');
+        }
+
+        $this->content = (string) $content;
     }
 
     /**

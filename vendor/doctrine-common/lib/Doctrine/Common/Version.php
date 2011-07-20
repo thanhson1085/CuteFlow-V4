@@ -36,7 +36,7 @@ class Version
     /**
      * Current Doctrine Version
      */
-    const VERSION = '3.0.0-DEV';
+    const VERSION = '2.1.0RC4-DEV';
 
     /**
      * Compares a Doctrine version with the current one.
