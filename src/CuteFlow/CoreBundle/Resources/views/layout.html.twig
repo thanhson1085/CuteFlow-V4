@@ -1,0 +1,45 @@
+{% extends '::base.html.twig' %}
+
+{% block mainmenu %}
+<ul>
+    <li>
+        <a class="{{ app.request.attributes.get('_route') == 'cuteflow_dashboard' ? 'selected' : '' }}" 
+           href="">
+            {% trans %}Dashboard{% endtrans %}
+        </a>
+    </li>
+    <li>
+        <a class="{{ app.request.attributes.get('_route') == 'cuteflow_workflows' ? 'selected' : '' }}" 
+           href="">
+            {% trans %}Workflows{% endtrans %}
+        </a>
+    </li>
+    <li>
+        <a class="{{ app.request.attributes.get('_route') == 'cuteflow_reports' ? 'selected' : '' }}" 
+           href="">
+            {% trans %}Reports{% endtrans %}
+        </a>
+    </li>
+    <li>
+        <a class="{{ app.request.attributes.get('_route') == 'cuteflow_workflow_management' ? 'selected' : '' }}" 
+           href="">
+            {% trans %}Workflow Management{% endtrans %}
+        </a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% stylesheets 
+            '@CuteFlowCoreBundle/Resources/public/css/application.css'
+            '@CuteFlowCoreBundle/Resources/public/css/theme/modulaMojito/application.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="all" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    
+{% endblock %}

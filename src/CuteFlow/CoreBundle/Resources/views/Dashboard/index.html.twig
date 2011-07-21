@@ -1,1 +1,11 @@
-Dashboard
+{% extends 'CuteFlowCoreBundle::layout.html.twig' %}
+
+{% block body %}
+<h2>{% trans %}Dashboard{% endtrans %}</h2>
+{% endblock %}
+
+{% block sidebar %}
+    {{ parent() }}
+    <h3>{% trans %}Filter{% endtrans %}</h3>
+
+{% endblock %}

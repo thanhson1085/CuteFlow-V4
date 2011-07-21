@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% stylesheets 
+            '@CuteFlowCoreBundle/Resources/public/css/application.css'
+            '@CuteFlowCoreBundle/Resources/public/css/theme/modulaMojito/application.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="all" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block sidebarclass %}class="nosidebar"{% endblock %}
+
+{% block body %}
+    <h1>Login</h1>
+
+    {% if error %}
+        <div class="flash error">{{ error.message }}</div>
+    {% endif %}
+
+    <div id="login-form">
+        <form action="{{ path("_security_check") }}" method="post" id="login">
+            <table>
+                <tr>
+                    <td align="right"><label for="username">Username:</label></td>
+                    <td align="left"><p><input type="text" id="username" name="_username" size="40" value="{{ last_username }}" /></p></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="password">Password:</label></td>
+                    <td align="left"><p><input type="password" id="password" size="40" name="_password" /></p></td>
+                </tr>
+                <tr>
+                    <td/>
+                    <td align="left"><label for="remember_me"><input id="remember_me" type="checkbox" value="1" name="_remember_me"/>
+                            Remember me</label></td>
+                </tr>
+                <tr>
+                    <td align="left"><a href="#">Lost password</a></td>
+                    <td align="right"><input type="submit" value="Login »"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+{% endblock %}

@@ -4,3 +4,4 @@ web/uploads/*
 web/bundles/*
 nbproject/
 web/web.config
+app/config/parameters.ini

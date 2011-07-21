@@ -1,13 +1,70 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}CuteFlow{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div id="wrapper">
+            <div id="top-menu">
+                
+                <div id="account">
+                    {% if app.user %}
+                        <ul>
+                            <li>
+                                <a class="my-account" 
+                                   href="">
+                                    {% trans %}My account{% endtrans %}
+                                </a>
+                            </li>
+                            <li>
+                                <a class="logout" 
+                                   href="">
+                                     {% trans %}Sign out{% endtrans %}
+                                </a>
+                            </li>
+                        </ul>
+                    {% endif %}
+                </div>
+                
+                {% if app.user %}
+                    <div id="loggedas">
+                        {% trans %}Logged in as{% endtrans %} <a href="">{{ app.user.username }}</a>
+                    </div>
+                {% endif %}
+
+                <ul>
+                    <li><a href="{{ path('cuteflow_dashboard') }}">{% trans %}Home{% endtrans %}</a></li>
+                    {% if app.user and is_granted('ROLE_ADMIN') %}
+                        <li><a href="">{% trans %}Administration{% endtrans %}</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div id="header">
+                <h1>
+                    CuteFlow {% block projectname %}{% endblock %}
+                </h1>
+                <div id="main-menu">
+                    {% block mainmenu %}{% endblock %}
+                </div>                
+            </div>
+
+            <div id="main" {% block sidebarclass %} {% endblock %} >
+                <div id="sidebar">{% block sidebar %}{% endblock %}</div>
+                <div id="content">
+                    {% block contextual %}{% endblock %}
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+            <div id="footer">
+                Powered by <a href="https://github.com/cuteflow" target="_blank">CuteFlow</a> R4-V.0.1.0
+            </div>
+        </div>
+
+        {% block javascripts %}
+
+        {% endblock %}
     </body>
 </html>
