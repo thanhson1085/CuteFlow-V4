@@ -1,0 +1,2 @@
+cuteflow_core:
+    resource: "@CuteFlowCoreBundle/Resources/config/routing.yml"
