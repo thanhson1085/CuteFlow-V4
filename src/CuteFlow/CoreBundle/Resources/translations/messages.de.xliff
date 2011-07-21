@@ -3,8 +3,48 @@
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
             <trans-unit id="1">
-                <source></source>
-                <target></target>
+                <source>Dashboard</source>
+                <target>Übersicht</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Workflows</source>
+                <target>Umläufe</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Reports</source>
+                <target>Auswertungen</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Workflow Management</source>
+                <target>Umlaufverwaltung</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>My account</source>
+                <target>Mein Account</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Sign out</source>
+                <target>Abmelden</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Logged in as</source>
+                <target>Angemeldet als</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Home</source>
+                <target>Startseite</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Administration</source>
+                <target>Administration</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Settings</source>
+                <target>Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>Filter</source>
+                <target>Filter</target>
             </trans-unit>
         </body>
     </file>

@@ -1,6 +1,6 @@
 security:
     encoders:
-        Taskboxx\FrontendBundle\Entity\User: md5
+        CuteFlow\CoreBundle\Entity\User: md5
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
@@ -8,10 +8,6 @@ security:
     providers:
         main:
             entity: { class: CuteFlowCoreBundle:User, property: username }
-        #in_memory:
-        #    users:
-        #        user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-        #        admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         profiler:
