@@ -8,8 +8,6 @@
  *
  */
 
-@import url(../../../stylesheets/application.css);
-
 body, #wrapper { background-color:#eee; font-family:"Lucida Grande", verdana, arial, helvetica, sans-serif; }
 
 a:hover { text-decoration: underline; }

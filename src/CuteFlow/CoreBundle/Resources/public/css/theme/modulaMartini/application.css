@@ -9,8 +9,6 @@
  *
  */
 
-/* Load the default Redmine stylesheet. */
-@import url(../../../stylesheets/application.css);
 
 body,
 #wrapper {

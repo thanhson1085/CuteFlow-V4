@@ -37,9 +37,10 @@
 
                 <ul>
                     <li><a href="{{ path('cuteflow_dashboard') }}">{% trans %}Home{% endtrans %}</a></li>
-                    {% if app.user and is_granted('ROLE_ADMIN') %}
-                        <li><a href="">{% trans %}Administration{% endtrans %}</a></li>
+                    {% if app.user and is_granted('ROLE_CF_ADMIN') %}
+                        <li><a href="{{ path('cuteflow_admin_index') }}">{% trans %}Administration{% endtrans %}</a></li>
                     {% endif %}
+                    <li><a href="http://www.cuteflow.org/guide/v4">{% trans %}Help{% endtrans %}</a></li>
                 </ul>
             </div>
             <div id="header">
@@ -59,7 +60,7 @@
                 </div>
             </div>
             <div id="footer">
-                Powered by <a href="https://github.com/cuteflow" target="_blank">CuteFlow</a> R4-V.0.1.0
+                Powered by <a href="https://github.com/cuteflow" target="_blank">CuteFlow</a> {{ version }}
             </div>
         </div>
 

@@ -35,7 +35,7 @@ class User implements UserInterface
     
     /**
      * @ORM\ManyToMany(targetEntity="Role")
-     * @ORM\JoinTable(name="user_role",
+     * @ORM\JoinTable(name="cf_user_role",
      *     joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
      *     inverseJoinColumns={@ORM\JoinColumn(name="role_id", referencedColumnName="id")}
      * )
@@ -43,11 +43,37 @@ class User implements UserInterface
      * @var ArrayCollection $userRoles
      */
     protected $userRoles;
+    
     /**
      * @ORM\Column(type="string", length="5")
      * @var String
      */
     protected $locale;
+    
+    /**
+     * @ORM\Column(type="string", length="100")
+     * @var String
+     */
+    protected $theme;
+
+    /**
+     * @var string $lastName
+     *
+     * @ORM\Column(name="last_name", type="string", length="255")
+     */
+    protected $lastName;
+
+    /**
+     * @var string $firstName
+     *
+     * @ORM\Column(name="first_name", type="string", length="255")
+     */
+    protected $firstName;
+
+    /**
+     * @ORM\Column(name="last_login", type="datetime")
+     */
+    protected $lastLogin;
 
     /**
      * Constructs a new instance of User
@@ -125,6 +151,21 @@ class User implements UserInterface
         return $this->getUserRoles()->toArray();
     }
 
+    /**
+     * @param string $rolename
+     * @return boolean
+     */
+    public function hasRole($rolename)
+    {
+        foreach ($this->getRoles() as $role) {
+            if ($role->getName() == $rolename) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public function eraseCredentials()
     {
         
@@ -162,4 +203,94 @@ class User implements UserInterface
         return true;
     }
 
+
+    /**
+     * Set theme
+     *
+     * @param string $theme
+     */
+    public function setTheme($theme)
+    {
+        $this->theme = $theme;
+    }
+
+    /**
+     * Get theme
+     *
+     * @return string 
+     */
+    public function getTheme()
+    {
+        return $this->theme;
+    }
+
+    /**
+     * Add userRoles
+     *
+     * @param CuteFlow\CoreBundle\Entity\Role $userRoles
+     */
+    public function addUserRoles(\CuteFlow\CoreBundle\Entity\Role $userRoles)
+    {
+        $this->userRoles[] = $userRoles;
+    }
+
+    /**
+     * Set lastName
+     *
+     * @param string $lastName
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+    }
+
+    /**
+     * Get lastName
+     *
+     * @return string 
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * Set firstName
+     *
+     * @param string $firstName
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+    }
+
+    /**
+     * Get firstName
+     *
+     * @return string 
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * Set lastLogin
+     *
+     * @param datetime $lastLogin
+     */
+    public function setLastLogin($lastLogin)
+    {
+        $this->lastLogin = $lastLogin;
+    }
+
+    /**
+     * Get lastLogin
+     *
+     * @return datetime 
+     */
+    public function getLastLogin()
+    {
+        return $this->lastLogin;
+    }
 }

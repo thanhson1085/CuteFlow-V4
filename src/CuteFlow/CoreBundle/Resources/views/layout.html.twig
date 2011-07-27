@@ -4,7 +4,7 @@
 <ul>
     <li>
         <a class="{{ app.request.attributes.get('_route') == 'cuteflow_dashboard' ? 'selected' : '' }}" 
-           href="">
+           href="{{ path('cuteflow_dashboard') }}">
             {% trans %}Dashboard{% endtrans %}
         </a>
     </li>
@@ -15,8 +15,8 @@
         </a>
     </li>
     <li>
-        <a class="{{ app.request.attributes.get('_route') == 'cuteflow_reports' ? 'selected' : '' }}" 
-           href="">
+        <a class="{{ app.request.attributes.get('_route') == 'cuteflow_reports_overview' ? 'selected' : '' }}" 
+           href="{{ path('cuteflow_reports_overview') }}">
             {% trans %}Reports{% endtrans %}
         </a>
     </li>
@@ -41,5 +41,6 @@
 {% endblock %}
 
 {% block javascripts %}
-    
+    <script src="{{ asset('bundles/cuteflowcore/js/jquery-1.6.2.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/cuteflowcore/js/tabs.js') }}" type="text/javascript"></script>
 {% endblock %}

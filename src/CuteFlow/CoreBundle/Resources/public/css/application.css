@@ -53,19 +53,19 @@ h4, .wiki h3 {font-size: 13px;padding: 2px 10px 1px 0px;margin-bottom: 5px; bord
 #admin-menu li {margin: 0;  padding: 0 0 12px 0; list-style-type:none;}
 
 #admin-menu a { background-position: 0% 40%; background-repeat: no-repeat; padding-left: 20px; padding-top: 2px; padding-bottom: 3px;}
-#admin-menu a.projects { background-image: url(../images/projects.png); }
-#admin-menu a.users { background-image: url(../images/user.png); }
-#admin-menu a.groups { background-image: url(../images/group.png); }
-#admin-menu a.roles { background-image: url(../images/database_key.png); }
-#admin-menu a.trackers { background-image: url(../images/ticket.png); }
-#admin-menu a.issue_statuses { background-image: url(../images/ticket_edit.png); }
-#admin-menu a.workflows { background-image: url(../images/ticket_go.png); }
-#admin-menu a.custom_fields { background-image: url(../images/textfield.png); }
-#admin-menu a.enumerations { background-image: url(../images/text_list_bullets.png); }
-#admin-menu a.settings { background-image: url(../images/changeset.png); }
-#admin-menu a.plugins { background-image: url(../images/plugin.png); }
-#admin-menu a.info { background-image: url(../images/help.png); }
-#admin-menu a.server_authentication { background-image: url(../images/server_key.png); }
+#admin-menu a.projects { background-image: url(/bundles/cuteflowcore/images/projects.png); }
+#admin-menu a.users { background-image: url(/bundles/cuteflowcore/images/user.png); }
+#admin-menu a.groups { background-image: url(/bundles/cuteflowcore/images/group.png); }
+#admin-menu a.roles { background-image: url(/bundles/cuteflowcore/images/database_key.png); }
+#admin-menu a.trackers { background-image: url(/bundles/cuteflowcore/images/ticket.png); }
+#admin-menu a.issue_statuses { background-image: url(/bundles/cuteflowcore/images/ticket_edit.png); }
+#admin-menu a.workflows { background-image: url(/bundles/cuteflowcore/images/ticket_go.png); }
+#admin-menu a.custom_fields { background-image: url(/bundles/cuteflowcore/images/textfield.png); }
+#admin-menu a.enumerations { background-image: url(/bundles/cuteflowcore/images/text_list_bullets.png); }
+#admin-menu a.settings { background-image: url(/bundles/cuteflowcore/images/changeset.png); }
+#admin-menu a.plugins { background-image: url(/bundles/cuteflowcore/images/plugin.png); }
+#admin-menu a.info { background-image: url(/bundles/cuteflowcore/images/help.png); }
+#admin-menu a.server_authentication { background-image: url(/bundles/cuteflowcore/images/server_key.png); }
 
 #main {background-color:#EEEEEE;}
 
@@ -91,7 +91,7 @@ html>body #content { min-height: 600px; }
 #login-form label {font-weight: bold;}
 #login-form input#username, #login-form input#password { width: 300px; }
 
-input#openid_url { background: url(../images/openid-bg.gif) no-repeat; background-color: #fff; background-position: 0 50%; padding-left: 18px; }
+input#openid_url { background: url(/bundles/cuteflowcore/images/openid-bg.gif) no-repeat; background-color: #fff; background-position: 0 50%; padding-left: 18px; }
 
 .clear:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; }
 
@@ -115,7 +115,7 @@ table.list caption { text-align: left; padding: 0.5em 0.5em 0.5em 0; }
 
 tr.project td.name a { white-space:nowrap; }
 
-tr.project.idnt td.name span {background: url(../images/bullet_arrow_right.png) no-repeat 0 50%; padding-left: 16px;}
+tr.project.idnt td.name span {background: url(/bundles/cuteflowcore/images/bullet_arrow_right.png) no-repeat 0 50%; padding-left: 16px;}
 tr.project.idnt-1 td.name {padding-left: 0.5em;}
 tr.project.idnt-2 td.name {padding-left: 2em;}
 tr.project.idnt-3 td.name {padding-left: 3.5em;}
@@ -131,7 +131,7 @@ tr.issue td.subject, tr.issue td.category, td.assigned_to, tr.issue td.string, t
 tr.issue td.subject { text-align: left; }
 tr.issue td.done_ratio table.progress { margin-left:auto; margin-right: auto;}
 
-tr.issue.idnt td.subject a {background: url(../images/bullet_arrow_right.png) no-repeat 0 50%; padding-left: 16px;}
+tr.issue.idnt td.subject a {background: url(/bundles/cuteflowcore/images/bullet_arrow_right.png) no-repeat 0 50%; padding-left: 16px;}
 tr.issue.idnt-1 td.subject {padding-left: 0.5em;}
 tr.issue.idnt-2 td.subject {padding-left: 2em;}
 tr.issue.idnt-3 td.subject {padding-left: 3.5em;}
@@ -152,8 +152,8 @@ tr.entry td.age { text-align: right; }
 tr.entry.file td.filename a { margin-left: 16px; }
 tr.entry.file td.filename_no_report a { margin-left: 16px; }
 
-tr span.expander {background-image: url(../images/bullet_toggle_plus.png); padding-left: 8px; margin-left: 0; cursor: pointer;}
-tr.open span.expander {background-image: url(../images/bullet_toggle_minus.png);}
+tr span.expander {background-image: url(/bundles/cuteflowcore/images/bullet_toggle_plus.png); padding-left: 8px; margin-left: 0; cursor: pointer;}
+tr.open span.expander {background-image: url(/bundles/cuteflowcore/images/bullet_toggle_minus.png);}
 
 tr.changeset td.author { text-align: center; width: 15%; }
 tr.changeset td.committed_on { text-align: center; width: 15%; }
@@ -168,12 +168,12 @@ tr.message { height: 2.6em; }
 tr.message td.subject { padding-left: 20px; }
 tr.message td.created_on { white-space: nowrap; }
 tr.message td.last_message { font-size: 80%; white-space: nowrap; }
-tr.message.locked td.subject { background: url(../images/locked.png) no-repeat 0 1px; }
-tr.message.sticky td.subject { background: url(../images/bullet_go.png) no-repeat 0 1px; font-weight: bold; }
+tr.message.locked td.subject { background: url(/bundles/cuteflowcore/images/locked.png) no-repeat 0 1px; }
+tr.message.sticky td.subject { background: url(/bundles/cuteflowcore/images/bullet_go.png) no-repeat 0 1px; font-weight: bold; }
 
 tr.version.closed, tr.version.closed a { color: #999; }
 tr.version td.name { padding-left: 20px; }
-tr.version.shared td.name { background: url(../images/link.png) no-repeat 0% 70%; }
+tr.version.shared td.name { background: url(/bundles/cuteflowcore/images/link.png) no-repeat 0% 70%; }
 tr.version td.date, tr.version td.status, tr.version td.sharing { text-align: center; white-space:nowrap; }
 
 tr.user td { width:13%; }
@@ -209,23 +209,23 @@ table p {margin:0;}
 .even {background-color: #fff;}
 
 a.sort { padding-right: 16px; background-position: 100% 50%; background-repeat: no-repeat; }
-a.sort.asc  { background-image: url(../images/sort_asc.png); }
-a.sort.desc { background-image: url(../images/sort_desc.png); }
+a.sort.asc  { background-image: url(/bundles/cuteflowcore/images/sort_asc.png); }
+a.sort.desc { background-image: url(/bundles/cuteflowcore/images/sort_desc.png); }
 
 table.attributes { width: 100% }
 table.attributes th { vertical-align: top; text-align: left; }
 table.attributes td { vertical-align: top; }
 
-table.boards a.board, h3.comments { background: url(../images/comment.png) no-repeat 0% 50%; padding-left: 20px; }
+table.boards a.board, h3.comments { background: url(/bundles/cuteflowcore/images/comment.png) no-repeat 0% 50%; padding-left: 20px; }
 
 td.center {text-align:center;}
 
-h3.version { background: url(../images/package.png) no-repeat 0% 50%; padding-left: 20px; }
+h3.version { background: url(/bundles/cuteflowcore/images/package.png) no-repeat 0% 50%; padding-left: 20px; }
 
-div.issues h3 { background: url(../images/ticket.png) no-repeat 0% 50%; padding-left: 20px; }
-div.members h3 { background: url(../images/group.png) no-repeat 0% 50%; padding-left: 20px; }
-div.news h3 { background: url(../images/news.png) no-repeat 0% 50%; padding-left: 20px; }
-div.projects h3 { background: url(../images/projects.png) no-repeat 0% 50%; padding-left: 20px; }
+div.issues h3 { background: url(/bundles/cuteflowcore/images/ticket.png) no-repeat 0% 50%; padding-left: 20px; }
+div.members h3 { background: url(/bundles/cuteflowcore/images/group.png) no-repeat 0% 50%; padding-left: 20px; }
+div.news h3 { background: url(/bundles/cuteflowcore/images/news.png) no-repeat 0% 50%; padding-left: 20px; }
+div.projects h3 { background: url(/bundles/cuteflowcore/images/projects.png) no-repeat 0% 50%; padding-left: 20px; }
 
 #watchers ul {margin: 0;  padding: 0;}
 #watchers li {list-style-type:none;margin: 0px 2px 0px 0px; padding: 0px 0px 0px 0px;}
@@ -287,8 +287,8 @@ div.issue span.private { position:relative; bottom: 2px; text-transform: upperca
 #relations td.buttons {padding:0;}
 
 fieldset.collapsible { border-width: 1px 0 0 0; font-size: 0.9em; }
-fieldset.collapsible legend { padding-left: 16px; background: url(../images/arrow_expanded.png) no-repeat 0% 40%; cursor:pointer; }
-fieldset.collapsible.collapsed legend { background-image: url(../images/arrow_collapsed.png); }
+fieldset.collapsible legend { padding-left: 16px; background: url(/bundles/cuteflowcore/images/arrow_expanded.png) no-repeat 0% 40%; cursor:pointer; }
+fieldset.collapsible.collapsed legend { background-image: url(/bundles/cuteflowcore/images/arrow_collapsed.png); }
 
 fieldset#date-range p { margin: 2px 0 2px 0; }
 fieldset#filters table { border-collapse: collapse; }
@@ -317,21 +317,21 @@ div#search-results-counts {float:right;}
 div#search-results-counts ul { margin-top: 0.5em; }
 div#search-results-counts  li { list-style-type:none; float: left; margin-left: 1em; }
   
-dt.issue { background-image: url(../images/ticket.png); }
-dt.issue-edit { background-image: url(../images/ticket_edit.png); }
-dt.issue-closed { background-image: url(../images/ticket_checked.png); }
-dt.issue-note { background-image: url(../images/ticket_note.png); }
-dt.changeset { background-image: url(../images/changeset.png); }
-dt.news { background-image: url(../images/news.png); }
-dt.message { background-image: url(../images/message.png); }
-dt.reply { background-image: url(../images/comments.png); }
-dt.wiki-page { background-image: url(../images/wiki_edit.png); }
-dt.attachment { background-image: url(../images/attachment.png); }
-dt.document { background-image: url(../images/document.png); }
-dt.project { background-image: url(../images/projects.png); }
-dt.time-entry { background-image: url(../images/time.png); }
+dt.issue { background-image: url(/bundles/cuteflowcore/images/ticket.png); }
+dt.issue-edit { background-image: url(/bundles/cuteflowcore/images/ticket_edit.png); }
+dt.issue-closed { background-image: url(/bundles/cuteflowcore/images/ticket_checked.png); }
+dt.issue-note { background-image: url(/bundles/cuteflowcore/images/ticket_note.png); }
+dt.changeset { background-image: url(/bundles/cuteflowcore/images/changeset.png); }
+dt.news { background-image: url(/bundles/cuteflowcore/images/news.png); }
+dt.message { background-image: url(/bundles/cuteflowcore/images/message.png); }
+dt.reply { background-image: url(/bundles/cuteflowcore/images/comments.png); }
+dt.wiki-page { background-image: url(/bundles/cuteflowcore/images/wiki_edit.png); }
+dt.attachment { background-image: url(/bundles/cuteflowcore/images/attachment.png); }
+dt.document { background-image: url(/bundles/cuteflowcore/images/document.png); }
+dt.project { background-image: url(/bundles/cuteflowcore/images/projects.png); }
+dt.time-entry { background-image: url(/bundles/cuteflowcore/images/time.png); }
 
-#search-results dt.issue.closed { background-image: url(../images/ticket_checked.png); }
+#search-results dt.issue.closed { background-image: url(/bundles/cuteflowcore/images/ticket_checked.png); }
 
 div#roadmap .related-issues { margin-bottom: 1em; }
 div#roadmap .related-issues td.checkbox { display: none; }
@@ -362,7 +362,7 @@ ul.projects ul.projects { border-left: 3px solid #e0e0e0; }
 ul.projects li.root { list-style-type:none; margin-bottom: 1em; }
 ul.projects li.child { list-style-type:none; margin-top: 1em;}
 ul.projects div.root a.project { font-family: "Trebuchet MS", Verdana, sans-serif; font-weight: bold; font-size: 16px; margin: 0 0 10px 0; }
-.my-project { padding-left: 18px; background: url(../images/fav.png) no-repeat 0 50%; }
+.my-project { padding-left: 18px; background: url(/bundles/cuteflowcore/images/fav.png) no-repeat 0 50%; }
 
 #tracker_project_ids ul { margin: 0;  padding-left: 1em; }
 #tracker_project_ids li { list-style-type:none; } 
@@ -428,7 +428,7 @@ width: auto;
 
 input#time_entry_comments { width: 90%;}
 
-#preview fieldset {margin-top: 1em; background: url(../images/draft.png)}
+#preview fieldset {margin-top: 1em; background: url(/bundles/cuteflowcore/images/draft.png)}
 
 .tabular.settings p{ padding-left: 300px; }
 .tabular.settings label{ margin-left: -300px; width: 295px; }
@@ -456,7 +456,7 @@ div.attachments span.author { font-size: 0.9em; color: #888; }
 p.other-formats { text-align: right; font-size:0.9em; color: #666; }
 .other-formats span + span:before { content: "| "; }
 
-a.atom { background: url(../images/feed.png) no-repeat 1px 50%; padding: 2px 0px 3px 16px; }
+a.atom { background: url(/bundles/cuteflowcore/images/feed.png) no-repeat 1px 50%; padding: 2px 0px 3px 16px; }
 
 /* Project members tab */
 div#tab-content-members .splitcontentleft, div#tab-content-memberships .splitcontentleft, div#tab-content-users .splitcontentleft { width: 64% }
@@ -466,7 +466,7 @@ div#tab-content-members fieldset legend, div#tab-content-memberships fieldset le
 div#tab-content-members fieldset label, div#tab-content-memberships fieldset label, div#tab-content-users fieldset label { display: block; }
 div#tab-content-members fieldset div, div#tab-content-users fieldset div { max-height: 400px; overflow:auto; }
 
-table.members td.group { padding-left: 20px; background: url(../images/group.png) no-repeat 0% 50%; }
+table.members td.group { padding-left: 20px; background: url(/bundles/cuteflowcore/images/group.png) no-repeat 0% 50%; }
 
 input#principal_search, input#user_search {width:100%}
 
@@ -483,21 +483,21 @@ input#principal_search, input#user_search {width:100%}
 div.flash {margin-top: 8px;}
 
 div.flash.error, #errorExplanation {
-	background: url(../images/exclamation.png) 8px 50% no-repeat;
+	background: url(/bundles/cuteflowcore/images/exclamation.png) 8px 50% no-repeat;
 	background-color: #ffe3e3;
 	border-color: #dd0000;
 	color: #880000;
 }
 
 div.flash.notice {
-    background: url(../images/true.png) 8px 5px no-repeat;
+    background: url(/bundles/cuteflowcore/images/true.png) 8px 5px no-repeat;
 	background-color: #dfffdf;
 	border-color: #9fcf9f;
 	color: #005f00;
 }
 
 div.flash.warning {
-  background: url(../images/warning.png) 8px 5px no-repeat;
+  background: url(/bundles/cuteflowcore/images/warning.png) 8px 5px no-repeat;
 	background-color: #FFEBC1;
 	border-color: #FDBF3B;
 	color: #A6750C;
@@ -511,7 +511,7 @@ div.flash.warning {
 	color: #A6750C;
 }
 
-span.error {padding-left:20px; background:url(../images/exclamation.png) no-repeat 0 50%;}
+span.error {padding-left:20px; background:url(/bundles/cuteflowcore/images/exclamation.png) no-repeat 0 50%;}
 
 #errorExplanation ul { font-size: 0.9em;}
 #errorExplanation h2, #errorExplanation p { display: none; }
@@ -537,7 +537,7 @@ html>body #ajax-indicator { position: fixed; }
 #ajax-indicator span {
 background-position: 0% 40%;
 background-repeat: no-repeat;
-background-image: url(../images/loading.gif);
+background-image: url(/bundles/cuteflowcore/images/loading.gif);
 padding-left: 26px;
 vertical-align: bottom;
 }
@@ -553,9 +553,9 @@ table.cal td p.day-num {font-size: 1.1em; text-align:right;}
 table.cal td.odd p.day-num {color: #bbb;}
 table.cal td.today {background:#ffffdd;}
 table.cal td.today p.day-num {font-weight: bold;}
-table.cal .starting a, p.cal.legend .starting {background: url(../images/bullet_go.png) no-repeat -1px -2px; padding-left:16px;}
-table.cal .ending a, p.cal.legend .ending {background: url(../images/bullet_end.png) no-repeat -1px -2px; padding-left:16px;}
-table.cal .starting.ending a, p.cal.legend .starting.ending {background: url(../images/bullet_diamond.png) no-repeat -1px -2px; padding-left:16px;}
+table.cal .starting a, p.cal.legend .starting {background: url(/bundles/cuteflowcore/images/bullet_go.png) no-repeat -1px -2px; padding-left:16px;}
+table.cal .ending a, p.cal.legend .ending {background: url(/bundles/cuteflowcore/images/bullet_end.png) no-repeat -1px -2px; padding-left:16px;}
+table.cal .starting.ending a, p.cal.legend .starting.ending {background: url(/bundles/cuteflowcore/images/bullet_diamond.png) no-repeat -1px -2px; padding-left:16px;}
 p.cal.legend span {display:block;}
 
 /***** Tooltips ******/
@@ -648,12 +648,12 @@ button.tab-left, button.tab-right {
 
 button.tab-left {
 	right: 20px;
-	background: #eeeeee url(../images/bullet_arrow_left.png) no-repeat 50% 50%;
+	background: #eeeeee url(/bundles/cuteflowcore/images/bullet_arrow_left.png) no-repeat 50% 50%;
 }
 
 button.tab-right {
 	right: 0;
-	background: #eeeeee url(../images/bullet_arrow_right.png) no-repeat 50% 50%;
+	background: #eeeeee url(/bundles/cuteflowcore/images/bullet_arrow_right.png) no-repeat 50% 50%;
 }
 
 /***** Auto-complete *****/
@@ -718,7 +718,7 @@ div.wiki .external {
     background-position: 0% 60%;
     background-repeat: no-repeat;
     padding-left: 12px;
-    background-image: url(../images/external.png);
+    background-image: url(/bundles/cuteflowcore/images/external.png);
 }
 
 div.wiki a.new {
@@ -793,11 +793,11 @@ width:12px;
 height:12px;
 background-repeat: no-repeat;
 cursor:pointer;
-background-image:url('../images/close.png');
+background-image:url('/bundles/cuteflowcore/images/close.png');
 }
 
 a.close-icon:hover {
-background-image:url('../images/close_hl.png');
+background-image:url('/bundles/cuteflowcore/images/close_hl.png');
 }
 
 /***** Gantt chart *****/
@@ -829,24 +829,24 @@ background-image:url('../images/close_hl.png');
 .task.label {width:100%;}
 .task.label.project, .task.label.version { font-weight: bold; }
 
-.task_late { background:#f66 url(../images/task_late.png); border: 1px solid #f66; }
-.task_done { background:#00c600 url(../images/task_done.png); border: 1px solid #00c600; }  
-.task_todo { background:#aaa url(../images/task_todo.png); border: 1px solid #aaa; }
+.task_late { background:#f66 url(/bundles/cuteflowcore/images/task_late.png); border: 1px solid #f66; }
+.task_done { background:#00c600 url(/bundles/cuteflowcore/images/task_done.png); border: 1px solid #00c600; }  
+.task_todo { background:#aaa url(/bundles/cuteflowcore/images/task_todo.png); border: 1px solid #aaa; }
 
 .task_todo.parent { background: #888; border: 1px solid #888; height: 3px;}
 .task_late.parent, .task_done.parent { height: 3px;}
-.task.parent.marker.starting  { position: absolute; background: url(../images/task_parent_end.png) no-repeat 0 0; width: 8px; height: 16px; margin-left: -4px; left: 0px; top: -1px;}
-.task.parent.marker.ending { position: absolute; background: url(../images/task_parent_end.png) no-repeat 0 0; width: 8px; height: 16px; margin-left: -4px; right: 0px; top: -1px;}
+.task.parent.marker.starting  { position: absolute; background: url(/bundles/cuteflowcore/images/task_parent_end.png) no-repeat 0 0; width: 8px; height: 16px; margin-left: -4px; left: 0px; top: -1px;}
+.task.parent.marker.ending { position: absolute; background: url(/bundles/cuteflowcore/images/task_parent_end.png) no-repeat 0 0; width: 8px; height: 16px; margin-left: -4px; right: 0px; top: -1px;}
 
-.version.task_late { background:#f66 url(../images/milestone_late.png); border: 1px solid #f66; height: 2px; margin-top: 3px;}
-.version.task_done { background:#00c600 url(../images/milestone_done.png); border: 1px solid #00c600; height: 2px; margin-top: 3px;}
-.version.task_todo { background:#fff url(../images/milestone_todo.png); border: 1px solid #fff; height: 2px; margin-top: 3px;}
-.version.marker { background-image:url(../images/version_marker.png); background-repeat: no-repeat; border: 0; margin-left: -4px; margin-top: 1px; }
+.version.task_late { background:#f66 url(/bundles/cuteflowcore/images/milestone_late.png); border: 1px solid #f66; height: 2px; margin-top: 3px;}
+.version.task_done { background:#00c600 url(/bundles/cuteflowcore/images/milestone_done.png); border: 1px solid #00c600; height: 2px; margin-top: 3px;}
+.version.task_todo { background:#fff url(/bundles/cuteflowcore/images/milestone_todo.png); border: 1px solid #fff; height: 2px; margin-top: 3px;}
+.version.marker { background-image:url(/bundles/cuteflowcore/images/version_marker.png); background-repeat: no-repeat; border: 0; margin-left: -4px; margin-top: 1px; }
 
-.project.task_late { background:#f66 url(../images/milestone_late.png); border: 1px solid #f66; height: 2px; margin-top: 3px;}
-.project.task_done { background:#00c600 url(../images/milestone_done.png); border: 1px solid #00c600; height: 2px; margin-top: 3px;}
-.project.task_todo { background:#fff url(../images/milestone_todo.png); border: 1px solid #fff; height: 2px; margin-top: 3px;}
-.project.marker { background-image:url(../images/project_marker.png); background-repeat: no-repeat; border: 0; margin-left: -4px; margin-top: 1px; }
+.project.task_late { background:#f66 url(/bundles/cuteflowcore/images/milestone_late.png); border: 1px solid #f66; height: 2px; margin-top: 3px;}
+.project.task_done { background:#00c600 url(/bundles/cuteflowcore/images/milestone_done.png); border: 1px solid #00c600; height: 2px; margin-top: 3px;}
+.project.task_todo { background:#fff url(/bundles/cuteflowcore/images/milestone_todo.png); border: 1px solid #fff; height: 2px; margin-top: 3px;}
+.project.marker { background-image:url(/bundles/cuteflowcore/images/project_marker.png); background-repeat: no-repeat; border: 0; margin-left: -4px; margin-top: 1px; }
 
 .version-behind-schedule a, .issue-behind-schedule a {color: #f66914;}
 .version-overdue a, .issue-overdue a, .project-overdue a {color: #f00;}
@@ -860,57 +860,57 @@ padding-top: 2px;
 padding-bottom: 3px;
 }
 
-.icon-add { background-image: url(../images/add.png); }
-.icon-edit { background-image: url(../images/edit.png); }
-.icon-copy { background-image: url(../images/copy.png); }
-.icon-duplicate { background-image: url(../images/duplicate.png); }
-.icon-del { background-image: url(../images/delete.png); }
-.icon-move { background-image: url(../images/move.png); }
-.icon-save { background-image: url(../images/save.png); }
-.icon-cancel { background-image: url(../images/cancel.png); }
-.icon-multiple { background-image: url(../images/table_multiple.png); }
-.icon-folder { background-image: url(../images/folder.png); }
-.open .icon-folder { background-image: url(../images/folder_open.png); }
-.icon-package { background-image: url(../images/package.png); }
-.icon-user { background-image: url(../images/user.png); }
-.icon-projects { background-image: url(../images/projects.png); }
-.icon-help { background-image: url(../images/help.png); }
-.icon-attachment  { background-image: url(../images/attachment.png); }
-.icon-history  { background-image: url(../images/history.png); }
-.icon-time  { background-image: url(../images/time.png); }
-.icon-time-add  { background-image: url(../images/time_add.png); }
-.icon-stats  { background-image: url(../images/stats.png); }
-.icon-warning  { background-image: url(../images/warning.png); }
-.icon-fav  { background-image: url(../images/fav.png); }
-.icon-fav-off  { background-image: url(../images/fav_off.png); }
-.icon-reload  { background-image: url(../images/reload.png); }
-.icon-lock  { background-image: url(../images/locked.png); }
-.icon-unlock  { background-image: url(../images/unlock.png); }
-.icon-checked  { background-image: url(../images/true.png); }
-.icon-details  { background-image: url(../images/zoom_in.png); }
-.icon-report  { background-image: url(../images/report.png); }
-.icon-comment  { background-image: url(../images/comment.png); }
-.icon-summary  { background-image: url(../images/lightning.png); }
-.icon-server-authentication { background-image: url(../images/server_key.png); }
-.icon-issue { background-image: url(../images/ticket.png); }
-.icon-zoom-in { background-image: url(../images/zoom_in.png); }
-.icon-zoom-out { background-image: url(../images/zoom_out.png); }
-.icon-passwd { background-image: url(../images/textfield_key.png); }
+.icon-add { background-image: url(/bundles/cuteflowcore/images/add.png); }
+.icon-edit { background-image: url(/bundles/cuteflowcore/images/edit.png); }
+.icon-copy { background-image: url(/bundles/cuteflowcore/images/copy.png); }
+.icon-duplicate { background-image: url(/bundles/cuteflowcore/images/duplicate.png); }
+.icon-del { background-image: url(/bundles/cuteflowcore/images/delete.png); }
+.icon-move { background-image: url(/bundles/cuteflowcore/images/move.png); }
+.icon-save { background-image: url(/bundles/cuteflowcore/images/save.png); }
+.icon-cancel { background-image: url(/bundles/cuteflowcore/images/cancel.png); }
+.icon-multiple { background-image: url(/bundles/cuteflowcore/images/table_multiple.png); }
+.icon-folder { background-image: url(/bundles/cuteflowcore/images/folder.png); }
+.open .icon-folder { background-image: url(/bundles/cuteflowcore/images/folder_open.png); }
+.icon-package { background-image: url(/bundles/cuteflowcore/images/package.png); }
+.icon-user { background-image: url(/bundles/cuteflowcore/images/user.png); }
+.icon-projects { background-image: url(/bundles/cuteflowcore/images/projects.png); }
+.icon-help { background-image: url(/bundles/cuteflowcore/images/help.png); }
+.icon-attachment  { background-image: url(/bundles/cuteflowcore/images/attachment.png); }
+.icon-history  { background-image: url(/bundles/cuteflowcore/images/history.png); }
+.icon-time  { background-image: url(/bundles/cuteflowcore/images/time.png); }
+.icon-time-add  { background-image: url(/bundles/cuteflowcore/images/time_add.png); }
+.icon-stats  { background-image: url(/bundles/cuteflowcore/images/stats.png); }
+.icon-warning  { background-image: url(/bundles/cuteflowcore/images/warning.png); }
+.icon-fav  { background-image: url(/bundles/cuteflowcore/images/fav.png); }
+.icon-fav-off  { background-image: url(/bundles/cuteflowcore/images/fav_off.png); }
+.icon-reload  { background-image: url(/bundles/cuteflowcore/images/reload.png); }
+.icon-lock  { background-image: url(/bundles/cuteflowcore/images/locked.png); }
+.icon-unlock  { background-image: url(/bundles/cuteflowcore/images/unlock.png); }
+.icon-checked  { background-image: url(/bundles/cuteflowcore/images/true.png); }
+.icon-details  { background-image: url(/bundles/cuteflowcore/images/zoom_in.png); }
+.icon-report  { background-image: url(/bundles/cuteflowcore/images/report.png); }
+.icon-comment  { background-image: url(/bundles/cuteflowcore/images/comment.png); }
+.icon-summary  { background-image: url(/bundles/cuteflowcore/images/lightning.png); }
+.icon-server-authentication { background-image: url(/bundles/cuteflowcore/images/server_key.png); }
+.icon-issue { background-image: url(/bundles/cuteflowcore/images/ticket.png); }
+.icon-zoom-in { background-image: url(/bundles/cuteflowcore/images/zoom_in.png); }
+.icon-zoom-out { background-image: url(/bundles/cuteflowcore/images/zoom_out.png); }
+.icon-passwd { background-image: url(/bundles/cuteflowcore/images/textfield_key.png); }
 
-.icon-file { background-image: url(../images/files/default.png); }
-.icon-file.text-plain { background-image: url(../images/files/text.png); }
-.icon-file.text-x-c { background-image: url(../images/files/c.png); }
-.icon-file.text-x-csharp { background-image: url(../images/files/csharp.png); }
-.icon-file.text-x-php { background-image: url(../images/files/php.png); }
-.icon-file.text-x-ruby { background-image: url(../images/files/ruby.png); }
-.icon-file.text-xml { background-image: url(../images/files/xml.png); }
-.icon-file.image-gif { background-image: url(../images/files/image.png); }
-.icon-file.image-jpeg { background-image: url(../images/files/image.png); }
-.icon-file.image-png { background-image: url(../images/files/image.png); }
-.icon-file.image-tiff { background-image: url(../images/files/image.png); }
-.icon-file.application-pdf { background-image: url(../images/files/pdf.png); }
-.icon-file.application-zip { background-image: url(../images/files/zip.png); }
-.icon-file.application-x-gzip { background-image: url(../images/files/zip.png); }
+.icon-file { background-image: url(/bundles/cuteflowcore/images/files/default.png); }
+.icon-file.text-plain { background-image: url(/bundles/cuteflowcore/images/files/text.png); }
+.icon-file.text-x-c { background-image: url(/bundles/cuteflowcore/images/files/c.png); }
+.icon-file.text-x-csharp { background-image: url(/bundles/cuteflowcore/images/files/csharp.png); }
+.icon-file.text-x-php { background-image: url(/bundles/cuteflowcore/images/files/php.png); }
+.icon-file.text-x-ruby { background-image: url(/bundles/cuteflowcore/images/files/ruby.png); }
+.icon-file.text-xml { background-image: url(/bundles/cuteflowcore/images/files/xml.png); }
+.icon-file.image-gif { background-image: url(/bundles/cuteflowcore/images/files/image.png); }
+.icon-file.image-jpeg { background-image: url(/bundles/cuteflowcore/images/files/image.png); }
+.icon-file.image-png { background-image: url(/bundles/cuteflowcore/images/files/image.png); }
+.icon-file.image-tiff { background-image: url(/bundles/cuteflowcore/images/files/image.png); }
+.icon-file.application-pdf { background-image: url(/bundles/cuteflowcore/images/files/pdf.png); }
+.icon-file.application-zip { background-image: url(/bundles/cuteflowcore/images/files/zip.png); }
+.icon-file.application-x-gzip { background-image: url(/bundles/cuteflowcore/images/files/zip.png); }
 
 img.gravatar { 
 	padding: 2px;

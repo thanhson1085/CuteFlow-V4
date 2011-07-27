@@ -1,0 +1,21 @@
+{% extends 'CuteFlowCoreBundle::admin.html.twig' %}
+
+{% block body %}
+<h2>{% trans %}Settings{% endtrans %}</h2>
+
+<!-- Tab-Navigation -->
+<div class="tabs">
+    <ul>
+        <li><a href="#" id="tab-general" class="selected" onclick="showTab('general'); this.blur(); return false;">{% trans %}General{% endtrans %}</a></li>
+        <li><a href="#" id="tab-email" onclick="showTab('email'); this.blur(); return false;">{% trans %}E-Mail{% endtrans %}</a></li>
+        <li><a href="#" id="tab-workflow" onclick="showTab('workflow'); this.blur(); return false;">{% trans %}Workflow{% endtrans %}</a></li>
+    </ul>
+</div>
+
+{% include 'CuteFlowCoreBundle:Admin:generalTab.html.twig' %}
+{% include 'CuteFlowCoreBundle:Admin:emailTab.html.twig' %}
+{% include 'CuteFlowCoreBundle:Admin:workflowTab.html.twig' %}
+
+{% endblock %}
+
+{% block sidebarclass %}class="nosidebar"{% endblock %}

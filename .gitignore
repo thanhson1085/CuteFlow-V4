@@ -5,3 +5,5 @@ web/bundles/*
 nbproject/
 web/web.config
 app/config/parameters.ini
+.idea
+CuteFlow_V4.iml

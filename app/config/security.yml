@@ -3,7 +3,7 @@ security:
         CuteFlow\CoreBundle\Entity\User: md5
 
     role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
+        ROLE_CF_ADMIN:       ROLE_CF_USER
 
     providers:
         main:
@@ -31,7 +31,7 @@ security:
             form_login:   
                 check_path: /login_check
                 login_path: /login
-#                success_handler: login_success
+                success_handler: login_success
             logout:       
                 path:   /logout
                 target: /
@@ -39,5 +39,5 @@ security:
         
 
     access_control:
-        - { path: /.*, roles: ROLE_USER }
-        - { path: /admin, roles: ROLE_ADMIN }
+        - { path: /.*, roles: ROLE_CF_USER }
+        - { path: /admin, roles: ROLE_CF_ADMIN }

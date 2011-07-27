@@ -34,17 +34,113 @@
                 <source>Home</source>
                 <target>Startseite</target>
             </trans-unit>
-            <trans-unit id="6">
+            <trans-unit id="9">
                 <source>Administration</source>
                 <target>Administration</target>
             </trans-unit>
-            <trans-unit id="9">
+            <trans-unit id="10">
                 <source>Settings</source>
                 <target>Einstellungen</target>
             </trans-unit>
-            <trans-unit id="10">
+            <trans-unit id="11">
                 <source>Filter</source>
                 <target>Filter</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>Help</source>
+                <target>Hilfe</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>User</source>
+                <target>Benutzer</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>System information</source>
+                <target>Systeminformationen</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>Userinterface</source>
+                <target>Benutzeroberfläche</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>Default language</source>
+                <target>Standardsprache</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>Default theme</source>
+                <target>Standardthema</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>Userformat</source>
+                <target>Benutzerformat</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>Use Gravatar user icons</source>
+                <target>Gravatar-Benutzer-Icons verwenden</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>E-Mail</source>
+                <target>E-Mail</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>Workflow</source>
+                <target>Workflow</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>Authentication</source>
+                <target>Authentifizierung</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>General</source>
+                <target>Allgemein</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>Workflowgroups</source>
+                <target>Workflowgruppen</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>Host</source>
+                <target>Server</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>Port</source>
+                <target>Port</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>Username</source>
+                <target>Benutzername</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>Password</source>
+                <target>Passwort</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>Emission email address</source>
+                <target>Ausgehende E-Mail Adresse</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>Email format</source>
+                <target>E-Mail Format</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>Email footer</source>
+                <target>E-Mail Fußzeile</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>Plain</source>
+                <target>Text</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>HTML</source>
+                <target>HTML</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>SMTP-Settings</source>
+                <target>SMTP-Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>Send-Settings</source>
+                <target>Versandeinstellungen</target>
             </trans-unit>
         </body>
     </file>

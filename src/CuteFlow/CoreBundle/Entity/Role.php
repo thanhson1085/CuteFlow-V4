@@ -92,4 +92,14 @@ class Role implements RoleInterface
     {
         return $this->getName();
     }
+
+    /**
+     * Set createdAt
+     *
+     * @param datetime $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    }
 }

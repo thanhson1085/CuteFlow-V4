@@ -1,0 +1,26 @@
+{% extends 'CuteFlowCoreBundle::admin.html.twig' %}
+
+{% block body %}
+<h2>{% trans %}System information{% endtrans %}</h2>
+
+<table class="list">
+    <tr class="odd">
+        <td>{% trans %}Version{% endtrans %}</td>
+        <td>{{ version }}</td>
+    </tr>
+    <tr class="even">
+        <td>{% trans %}PHP{% endtrans %}</td>
+        <td>{{ phpVersion }}</td>
+    </tr>
+    <tr class="odd">
+        <td>{% trans %}Root-Path{% endtrans %}</td>
+        <td>{{ rootPath }}</td>
+    </tr>
+    <tr class="even">
+        <td>{% trans %}Database{% endtrans %}</td>
+        <td>{{ database }}</td>
+    </tr>
+</table>
+{% endblock %}
+
+{% block sidebarclass %}class="nosidebar"{% endblock %}
