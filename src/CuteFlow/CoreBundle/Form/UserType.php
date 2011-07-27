@@ -18,5 +18,21 @@ class UserType extends AbstractType
         $builder->add('lastName', 'text', array(
                                     'label'=>'Lastname'
                                           ));
+
+        $builder->add('firstName', 'text', array(
+                                    'label'=>'Firstname'
+                                          ));
+
+        $builder->add('email', 'email', array(
+                                    'label'=>'Email'
+                                          ));
+
+        $builder->add('username', 'text', array(
+                                    'label'=>'Username'
+                                          ));
+
+        $builder->add('password', 'password', array(
+                                    'label'=>'Password'
+                                          ));
     }
 }

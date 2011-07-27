@@ -142,6 +142,38 @@
                 <source>Send-Settings</source>
                 <target>Versandeinstellungen</target>
             </trans-unit>
+            <trans-unit id="36">
+                <source>Edit user</source>
+                <target>Benutzer bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>Save</source>
+                <target>Speichern</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>Back to list</source>
+                <target>Zurück zur Liste</target>
+            </trans-unit>
+            <trans-unit id="39">
+                <source>User successfully saved</source>
+                <target>Benutzer erfolgreich gespeichert</target>
+            </trans-unit>
+            <trans-unit id="40">
+                <source>Edit</source>
+                <target>Bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>Delete</source>
+                <target>Löschen</target>
+            </trans-unit>
+            <trans-unit id="42">
+                <source>User successfully deleted</source>
+                <target>Benutzer erfolgreich gelöscht</target>
+            </trans-unit>
+            <trans-unit id="43">
+                <source>Do you really want to delete this user?</source>
+                <target>Wollen Sie diesen Benutzer wirklich löschen?</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

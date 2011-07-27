@@ -1,0 +1,46 @@
+{% extends 'CuteFlowCoreBundle::admin.html.twig' %}
+
+{% block sidebarclass %}class="nosidebar"{% endblock %}
+
+{% block body %}
+    <h2>{% trans %}Edit user{% endtrans %}</h2>
+
+    {% if form_errors(form) %}
+        <div class="flash error">
+            {{ form_errors(form) }}
+        </div>
+        <br/>
+	{% endif %}
+
+    <form method="post" action="{{ path('cuteflow_admin_user_save', {'id': user.id ? user.id : -1})}}"
+          {{ form_enctype(form) }}>
+
+        <div class="box tabular settings">
+            <p>
+                {{ form_label(form.firstName) }}
+                {{ form_widget(form.firstName) }}
+            </p>
+            <p>
+                {{ form_label(form.lastName) }}
+                {{ form_widget(form.lastName) }}
+            </p>
+            <p>
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email) }}
+            </p>
+            <p>
+                {{ form_label(form.username) }}
+                {{ form_widget(form.username) }}
+            </p>
+            <p>
+                {{ form_label(form.password) }}
+                {{ form_widget(form.password) }}
+            </p>
+        </div>
+
+        <input type="submit" value="{% trans %}Save{% endtrans %}" name="commit"/>
+        &nbsp;&nbsp;&nbsp;<a href="{{ path('cuteflow_admin_user') }}">{% trans %}Back to list{% endtrans %}</a>
+
+        {{ form_rest(form) }}
+    </form>
+{% endblock %}

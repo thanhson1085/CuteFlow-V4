@@ -14,24 +14,6 @@ use Symfony\Component\Locale\Locale;
 class AdminController extends Controller
 {
     /**
-     * @Route("/admin/user", name="cuteflow_admin_user")
-     * @Template()
-     * 
-     * @return array 
-     */
-    public function userAction()
-    {
-        $em = $settings = $this->getDoctrine()->getEntityManager();
-
-        $settings = $em->find('CuteFlowCoreBundle:Settings', 1);
-        $users = $em->getRepository('CuteFlowCoreBundle:User')->findAll();
-
-        $filterForm = $this->createForm(new UserFilterType());
-        
-        return array('filterForm'=>$filterForm, 'users'=>$users);
-    }
-    
-    /**
      * @Route("/admin", name="cuteflow_admin_index")
      * @Template("CuteFlowCoreBundle:Admin:systemInfo.html.twig")
      */

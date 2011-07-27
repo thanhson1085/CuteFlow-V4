@@ -45,13 +45,13 @@ class User implements UserInterface
     protected $userRoles;
     
     /**
-     * @ORM\Column(type="string", length="5")
+     * @ORM\Column(type="string", length="5", nullable=true)
      * @var String
      */
     protected $locale;
     
     /**
-     * @ORM\Column(type="string", length="100")
+     * @ORM\Column(type="string", length="100", nullable=true)
      * @var String
      */
     protected $theme;
@@ -71,7 +71,7 @@ class User implements UserInterface
     protected $firstName;
 
     /**
-     * @ORM\Column(name="last_login", type="datetime")
+     * @ORM\Column(name="last_login", type="datetime", nullable=true)
      */
     protected $lastLogin;
 
