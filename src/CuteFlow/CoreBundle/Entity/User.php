@@ -4,52 +4,60 @@ namespace CuteFlow\CoreBundle\Entity;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\Common\Collections\ArrayCollection;
+use CuteFlow\CoreBundle\Model\TimestampableEntity;
+use Symfony\Component\Security\Core\User\UserProviderInterface;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity() 
- * @ORM\Table(name="cf_user") 
+ * @ORM\Entity()
+ * @ORM\Table(name="cf_user")
+ * @ORM\Entity(repositoryClass="CuteFlow\CoreBundle\Model\Repository\UserRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class User implements UserInterface
 {
+    const ROLE_CUTEFLOW_ADMIN = 'ROLE_CUTEFLOW_ADMIN';
+    const ROLE_CUTEFLOW_USER = 'ROLE_CUTEFLOW_USER';
+    const ROLE_CUTEFLOW_DEFAULT = 'ROLE_CUTEFLOW_DEFAULT';
 
     /**
-     * @ORM\Id 
-     * @ORM\Column(type="integer") 
-     * @ORM\GeneratedValue(strategy="IDENTITY") 
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     protected $id;
     /**
-     * @ORM\Column(type="string", length="32", unique=true) 
+     * @ORM\Column(type="string", length="32", unique=true)
      */
     protected $username;
     /**
-     * @ORM\Column(type="string", length="255", unique=true) 
+     * @ORM\Column(type="string", length="255")
      */
     protected $email;
+
     /**
-     * @ORM\Column(type="string", length="128") 
+     * @ORM\Column(type="string", length="128")
      */
     protected $password;
-    
+
     /**
-     * @ORM\ManyToMany(targetEntity="Role")
-     * @ORM\JoinTable(name="cf_user_role",
-     *     joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *     inverseJoinColumns={@ORM\JoinColumn(name="role_id", referencedColumnName="id")}
-     * )
-     *
-     * @var ArrayCollection $userRoles
+     * not persisted, only for validation
      */
-    protected $userRoles;
-    
+    protected $plainPassword;
+
+    /**
+     * @ORM\Column(name="roles", type="array")
+     * @var ArrayCollection $roles
+     */
+    protected $roles;
+
     /**
      * @ORM\Column(type="string", length="5", nullable=true)
      * @var String
      */
     protected $locale;
-    
+
     /**
      * @ORM\Column(type="string", length="100", nullable=true)
      * @var String
@@ -76,11 +84,99 @@ class User implements UserInterface
     protected $lastLogin;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\column(name="deleted_at", type="datetime", nullable=true)
+     */
+    protected $deletedAt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length="255")
+     */
+    protected $salt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\column(name="created_at", type="datetime")
+     */
+    protected $createdAt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\column(name="updated_at", type="datetime")
+     */
+    protected $updatedAt;
+
+     /**
+     * Set createdAt
+     *
+     * @param datetime $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return datetime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param datetime $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return datetime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @return void
+     */
+    public function prePersist()
+    {
+        $this->createdAt = new \DateTime('now');
+        $this->updatedAt = new \DateTime('now');
+    }
+
+    /**
+     * @ORM\PreUpdate
+     * @return void
+     */
+    public function preUpdate()
+    {
+        $this->updatedAt = new \DateTime('now');
+    }
+
+    /**
      * Constructs a new instance of User
      */
     public function __construct()
     {
-        $this->userRoles = new ArrayCollection();
+        $this->roles = array();
+        $this->salt = base_convert(sha1(uniqid(mt_rand(), true)), 16, 36);
     }
 
     public function getId()
@@ -124,17 +220,7 @@ class User implements UserInterface
     }
 
     /**
-     * Gets the user roles.
-     *
-     * @return ArrayCollection A Doctrine ArrayCollection
-     */
-    public function getUserRoles()
-    {
-        return $this->userRoles;
-    }
-
-    /**
-     * Implementing the UserInterface interface 
+     * Implementing the UserInterface interface
      */
     public function __toString()
     {
@@ -143,12 +229,17 @@ class User implements UserInterface
 
     /**
      * Gets an array of roles.
-     * 
+     *
      * @return array An array of Role objects
      */
     public function getRoles()
     {
-        return $this->getUserRoles()->toArray();
+        $roles = $this->roles;
+
+        // make sure to have at least one role
+        $roles[] = self::ROLE_CUTEFLOW_DEFAULT;
+
+        return array_unique($roles);
     }
 
     /**
@@ -157,23 +248,30 @@ class User implements UserInterface
      */
     public function hasRole($rolename)
     {
-        foreach ($this->getRoles() as $role) {
-            if ($role->getName() == $rolename) {
-                return true;
-            }
-        }
+        return in_array(strtoupper($rolename), $this->getRoles(), true);
+    }
 
-        return false;
+    /**
+     * Removes a role to the user.
+     *
+     * @param string $role
+     */
+    public function removeRole($role)
+    {
+        if (false !== $key = array_search(strtoupper($role), $this->roles, true)) {
+            unset($this->roles[$key]);
+            $this->roles = array_values($this->roles);
+        }
     }
 
     public function eraseCredentials()
     {
-        
+        $this->plainPassword = null;
     }
 
     public function getSalt()
     {
-        return $this->getId();
+        return $this->salt;
     }
 
     public function getLocale()
@@ -187,10 +285,10 @@ class User implements UserInterface
     }
 
     /**
-     * equals. 
-     * 
-     * @param UserInterface $account 
-     * @return bool 
+     * equals.
+     *
+     * @param UserInterface $account
+     * @return bool
      */
     public function equals(UserInterface $account)
     {
@@ -217,21 +315,11 @@ class User implements UserInterface
     /**
      * Get theme
      *
-     * @return string 
+     * @return string
      */
     public function getTheme()
     {
         return $this->theme;
-    }
-
-    /**
-     * Add userRoles
-     *
-     * @param CuteFlow\CoreBundle\Entity\Role $userRoles
-     */
-    public function addUserRoles(\CuteFlow\CoreBundle\Entity\Role $userRoles)
-    {
-        $this->userRoles[] = $userRoles;
     }
 
     /**
@@ -247,7 +335,7 @@ class User implements UserInterface
     /**
      * Get lastName
      *
-     * @return string 
+     * @return string
      */
     public function getLastName()
     {
@@ -267,7 +355,7 @@ class User implements UserInterface
     /**
      * Get firstName
      *
-     * @return string 
+     * @return string
      */
     public function getFirstName()
     {
@@ -287,10 +375,99 @@ class User implements UserInterface
     /**
      * Get lastLogin
      *
-     * @return datetime 
+     * @return datetime
      */
     public function getLastLogin()
     {
         return $this->lastLogin;
     }
+
+    /**
+     * @return boolean
+     */
+    public function isAdmin()
+    {
+        return $this->hasRole(User::ROLE_CUTEFLOW_ADMIN);
+    }
+
+    public function setAdmin($value)
+    {
+        if ($value != $this->isAdmin()) {
+            if ($value == true) {
+                $this->addRole(User::ROLE_CUTEFLOW_ADMIN);
+            }
+            else {
+                $this->removeRole(User::ROLE_CUTEFLOW_ADMIN);
+            }
+
+        }
+    }
+
+    /**
+     * Set roles
+     *
+     * @param array $roles
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
+    }
+
+    /**
+     * Adds a role to the user.
+     *
+     * @param string $role
+     */
+    public function addRole($role)
+    {
+        $role = strtoupper($role);
+        if ($role === self::ROLE_CUTEFLOW_DEFAULT) {
+            return;
+        }
+
+        if (!in_array($role, $this->roles, true)) {
+            $this->roles[] = $role;
+        }
+    }
+
+    /**
+     * Set deletedAt
+     *
+     * @param datetime $deletedAt
+     */
+    public function setDeletedAt($deletedAt)
+    {
+        $this->deletedAt = $deletedAt;
+    }
+
+    /**
+     * Get deletedAt
+     *
+     * @return datetime 
+     */
+    public function getDeletedAt()
+    {
+        return $this->deletedAt;
+    }
+
+    /**
+     * Set salt
+     *
+     * @param string $salt
+     */
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+    }
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword($plainPassword)
+    {
+        $this->plainPassword = $plainPassword;
+    }
+
 }

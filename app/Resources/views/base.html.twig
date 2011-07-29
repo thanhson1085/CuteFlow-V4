@@ -37,7 +37,7 @@
 
                 <ul>
                     <li><a href="{{ path('cuteflow_dashboard') }}">{% trans %}Home{% endtrans %}</a></li>
-                    {% if app.user and is_granted('ROLE_CF_ADMIN') %}
+                    {% if app.user and is_granted('ROLE_CUTEFLOW_ADMIN') %}
                         <li><a href="{{ path('cuteflow_admin_index') }}">{% trans %}Administration{% endtrans %}</a></li>
                     {% endif %}
                     <li><a href="http://www.cuteflow.org/guide/v4">{% trans %}Help{% endtrans %}</a></li>
@@ -55,7 +55,7 @@
             <div id="main" {% block sidebarclass %} {% endblock %} >
                 <div id="sidebar">{% block sidebar %}{% endblock %}</div>
                 <div id="content">
-                    {% block contextual %}{% endblock %}
+                    <div class="contextual">{% block contextual %}{% endblock %}</div>
                     {% block body %}{% endblock %}
                 </div>
             </div>

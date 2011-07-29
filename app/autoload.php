@@ -17,7 +17,8 @@ $loader->registerNamespaces(array(
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
     'Stof'             => __DIR__.'/../vendor/bundles',
     'Gedmo'            => __DIR__.'/../vendor/gedmo-doctrine-extensions/lib',
-
+    'WhiteOctober\PagerfantaBundle' => __DIR__.'/../vendor/bundles',
+    'Pagerfanta'                    => __DIR__.'/../vendor/pagerfanta/src',
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',

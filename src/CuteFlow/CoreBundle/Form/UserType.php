@@ -31,8 +31,16 @@ class UserType extends AbstractType
                                     'label'=>'Username'
                                           ));
 
-        $builder->add('password', 'password', array(
-                                    'label'=>'Password'
+        $builder->add('plainPassword', 'repeated', array(
+                                    'type'=>'password',
+                                    'invalid_message' => 'The password fields must match',
+                                    'options' => array('label' => 'Password'),
+                                    'error_bubbling'=>true,
                                           ));
+
+        $builder->add('admin', 'checkbox', array(
+                                    'label'=>'Has Admin-Rights',
+                                    'required'=>false,
+                                           ));
     }
 }

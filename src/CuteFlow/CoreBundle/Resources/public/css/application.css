@@ -383,6 +383,8 @@ textarea#custom_field_possible_values {width: 99%}
 
 .pagination {font-size: 90%}
 p.pagination {margin-top:8px;}
+nav span { margin-right: 4px; }
+nav span.disabled { color: #cccccc; }
 
 /***** Tabular forms ******/
 .tabular p{
@@ -984,3 +986,6 @@ h2 img { vertical-align:middle; }
 	table.list {margin-top:0.5em;}
 	table.list th, table.list td {border: 1px solid #aaa;}
 }
+
+
+.filter label { font-weight: bold; margin-right: 4px; width: 300px; }

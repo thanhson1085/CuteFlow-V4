@@ -79,7 +79,7 @@
                 <target>Gravatar-Benutzer-Icons verwenden</target>
             </trans-unit>
             <trans-unit id="20">
-                <source>E-Mail</source>
+                <source>Email</source>
                 <target>E-Mail</target>
             </trans-unit>
             <trans-unit id="21">
@@ -173,6 +173,30 @@
             <trans-unit id="43">
                 <source>Do you really want to delete this user?</source>
                 <target>Wollen Sie diesen Benutzer wirklich löschen?</target>
+            </trans-unit>
+            <trans-unit id="44">
+                <source>Has Admin-Rights</source>
+                <target>Besitzt Admin-Rechte</target>
+            </trans-unit>
+            <trans-unit id="45">
+                <source>Firstname</source>
+                <target>Vorname</target>
+            </trans-unit>
+            <trans-unit id="46">
+                <source>Lastname</source>
+                <target>Nachname</target>
+            </trans-unit>
+            <trans-unit id="47">
+                <source>Last login</source>
+                <target>Letzte Anmeldung</target>
+            </trans-unit>
+            <trans-unit id="48">
+                <source>New user</source>
+                <target>Neuer Benutzer</target>
+            </trans-unit>
+            <trans-unit id="49">
+                <source>The password fields must match</source>
+                <target>Die Passwörter müssen übereinstimmen</target>
             </trans-unit>
         </body>
     </file>

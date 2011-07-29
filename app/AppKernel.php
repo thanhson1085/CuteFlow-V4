@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new CuteFlow\CoreBundle\CuteFlowCoreBundle(),
             new Bundle\GravatarBundle\GravatarBundle(),
             //new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

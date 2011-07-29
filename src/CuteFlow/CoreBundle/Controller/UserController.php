@@ -11,8 +11,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use CuteFlow\CoreBundle\Entity\User;
 use CuteFlow\CoreBundle\Form\UserType;
 
-
-
 class UserController extends Controller
 {
     /**
@@ -26,11 +24,16 @@ class UserController extends Controller
         $em = $settings = $this->getDoctrine()->getEntityManager();
 
         $settings = $em->find('CuteFlowCoreBundle:Settings', 1);
-        $users = $em->getRepository('CuteFlowCoreBundle:User')->findAll();
+
+        $query = $em->getRepository('CuteFlowCoreBundle:User')->getFindAllQuery();
+        $paginator = new \Pagerfanta\Pagerfanta(new \Pagerfanta\Adapter\DoctrineORMAdapter($query));
+        $paginator->setMaxPerPage($this->container->getParameter('cuteflow.pagesize.default'));
+        $paginator->setCurrentPage($this->get('request')->query->get('page', 1), false, true);
 
         $filterForm = $this->createForm(new UserFilterType());
 
-        return array('filterForm'=>$filterForm, 'users'=>$users);
+        return array('filterForm'=>$filterForm->createView(),
+                     'paginator'=>$paginator);
     }
 
     /**
@@ -91,6 +94,9 @@ class UserController extends Controller
         $userForm->bindRequest($this->getRequest());
 
         if ($userForm->isValid()) {
+            $user_manager = $this->get('cuteflow.user_manager');
+            $user_manager->updatePassword($user);
+
             $em->persist($user);
             $em->flush();
 
@@ -119,7 +125,8 @@ class UserController extends Controller
             throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException();
         }
 
-        $em->remove($user);
+        $user->setDeletedAt(new \DateTime('now'));
+        $em->persist($user);
         $em->flush();
 
         $this->getRequest()->getSession()->setFlash('deleted.successful', 1);
