@@ -1,0 +1,36 @@
+services:
+    cuteflow.login_success:
+        class: CuteFlow\CoreBundle\Handler\LoginHandler
+        arguments: [@doctrine.orm.entity_manager, @cuteflow.settings_manager]
+
+    cuteflow.twig.extension.locale:
+        class: CuteFlow\CoreBundle\Extension\LocaleDateExtension
+        tags:
+            - { name: twig.extension }
+        arguments: [@translator]
+
+    cuteflow.user_manager:
+        class: CuteFlow\CoreBundle\Model\UserManager
+        arguments: [@security.encoder_factory, @doctrine.orm.entity_manager, 'CuteFlow\CoreBundle\Entity\User']
+
+    cuteflow.settings_manager:
+        class: CuteFlow\CoreBundle\Model\SettingsManager
+        arguments: [@doctrine.orm.entity_manager, @mailer]
+
+    cuteflow.mailer:
+        class: CuteFlow\CoreBundle\Mailer\Mailer
+        arguments:
+            - @router
+            - @cuteflow.settings_manager
+            - @templating
+            - { welcome.template: "CuteFlowCoreBundle:Mail:welcome" }
+
+twig:
+    form:
+        resources:
+            - 'CuteFlowCoreBundle:Form:fields.html.twig'
+            
+parameters:
+    cuteflow.version: R4 - V.0.1.0
+    cuteflow.languages: {de:1, en:1}
+    cuteflow.pagesize.default: 25

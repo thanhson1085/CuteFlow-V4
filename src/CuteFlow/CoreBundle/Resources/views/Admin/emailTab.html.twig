@@ -1,0 +1,47 @@
+<div id="tab-content-email" class="tab-content" style="display: none;">
+    <form method="post" action="">
+        <fieldset class="box tabular settings">
+            <legend>{% trans %}SMTP-Settings{% endtrans %}</legend>
+            <p>
+                {{ form_label(emailForm.smtpHost) }}
+                {{ form_widget(emailForm.smtpHost) }}
+            </p>
+            <p>
+                {{ form_label(emailForm.smtpPort) }}
+                {{ form_widget(emailForm.smtpPort) }}
+            </p>
+            <p>
+                {{ form_label(emailForm.smtpUser) }}
+                {{ form_widget(emailForm.smtpUser) }}
+            </p>
+            <p>
+                {{ form_label(emailForm.smtpPassword) }}
+                {{ form_widget(emailForm.smtpPassword) }}
+            </p>
+            <p>
+                {{ form_label(emailForm.smtpAuthentication) }}
+                {{ form_widget(emailForm.smtpAuthentication) }}
+            </p>
+            <p>
+                {{ form_label(emailForm.smtpEncryption) }}
+                {{ form_widget(emailForm.smtpEncryption) }}
+            </p>
+        </fieldset>
+        <fieldset class="box tabular settings">
+            <legend>{% trans %}Send-Settings{% endtrans %}</legend>
+            <p>
+                {{ form_label(emailForm.emissionMailAddress) }}
+                {{ form_widget(emailForm.emissionMailAddress) }}
+            </p>
+            <p>
+                {{ form_label(emailForm.emailFormat) }}
+                {{ form_widget(emailForm.emailFormat) }}
+            </p>
+            <p>
+                {{ form_label(emailForm.emailFooter) }}
+                {{ form_widget(emailForm.emailFooter) }}
+            </p>
+        </fieldset>
+        <input type="submit" value="{% trans %}Save{% endtrans %}" name="commit"/>
+    </form>
+</div>

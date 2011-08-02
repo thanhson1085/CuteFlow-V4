@@ -1,0 +1,24 @@
+<div id="tab-content-general" class="tab-content">
+    <form method="post" action="" {{ form_enctype(generalForm) }}>
+        <div class="box tabular settings">
+            <p>
+                {{ form_label(generalForm.defaultLanguage) }}
+                {{ form_widget(generalForm.defaultLanguage, {'choices': availableLanguages} ) }}
+            </p>
+            <p>
+                {{ form_label(generalForm.defaultTheme) }}
+                {{ form_widget(generalForm.defaultTheme) }}
+            </p>
+            <p>
+                {{ form_label(generalForm.userFormat) }}
+                {{ form_widget(generalForm.userFormat) }}
+            </p>
+            <p>
+                {{ form_label(generalForm.useGravatar) }}
+                {{ form_widget(generalForm.useGravatar) }}
+            </p>
+        </div>
+
+        <input type="submit" value="{% trans %}Save{% endtrans %}" name="commit"/>
+    </form>
+</div>
