@@ -1,0 +1,74 @@
+{% extends 'CuteFlowCoreBundle::admin.html.twig' %}
+
+{% block contextual %}
+    <a class="icon icon-add" href="{{ path('cuteflow_admin_user_create') }}">{% trans %}New user{% endtrans %}</a>
+{% endblock %}
+
+{% block body %}
+    <h2>{% trans %}User{% endtrans %}</h2>
+
+    {% if (app.session.hasFlash('saved.successful')) %}
+        <div class="flash notice">
+            {% trans %}User successfully saved{% endtrans %}
+        </div>
+        <br/>
+    {% endif %}
+
+    {% if (app.session.hasFlash('deleted.successful')) %}
+        <div class="flash notice">
+            {% trans %}User successfully deleted{% endtrans %}
+        </div>
+        <br/>
+    {% endif %}
+
+    <table class="list">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th>{% trans %}Firstname{% endtrans %}</th>
+          <th>{% trans %}Lastname{% endtrans %}</th>
+          <th>{% trans %}Email{% endtrans %}</th>
+          <th>{% trans %}Username{% endtrans %}</th>
+          <th>{% trans %}Administrator{% endtrans %}</th>
+          <th>{% trans %}Last login{% endtrans %}</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in paginator %}
+            <tr class="{{ cycle(['odd', 'even'], loop.index) }}">
+                <td><img class="gravatar" width="14" height="14" src="{{ gravatar(user.email, 14) }}" /></td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.firstName}}</td>
+                <td>{{ user.email}}</td>
+                <td>{{ user.username}}</td>
+                <td style="text-align: center">
+                    {% if user.hasRole('ROLE_CUTEFLOW_ADMIN') %}
+                        <img src="/bundles/cuteflowcore/images/toggle_check.png" alt="yes">
+                    {% endif %}
+                </td>
+                <td>{{ user.lastLogin | localedate() }}</td>
+                <td>
+                    <small><a href="{{ path('cuteflow_admin_user_edit', {'id': user.id}) }}" class="icon icon-edit">{% trans %}Edit{% endtrans %}</a></small>
+                    <small><a href="{{ path('cuteflow_admin_user_delete', {'id': user.id}) }}" onclick="return confirm('{% trans %}Do you really want to delete this user?{% endtrans %}')" class="icon icon-del">{% trans %}Delete{% endtrans %}</a></small>
+                </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="pagination">
+        {{ pagerfanta(paginator, 'default') }}
+    </p>
+{% endblock %}
+
+{% block sidebar %}
+    <h3>{% trans %}Filter{% endtrans %}</h3>
+    <div class="filter">
+        <form action="{{ path('cuteflow_admin_user', {'page': paginator.currentPage})}}" method="POST">
+            {{ form_widget(filterForm) }}
+
+            <input type="submit" value="{% trans %}Filter{% endtrans %}"/>&nbsp;&nbsp;&nbsp;
+            <input type="button" value="Reset Filter"/>
+      </form>
+    </div>
+{% endblock %}
