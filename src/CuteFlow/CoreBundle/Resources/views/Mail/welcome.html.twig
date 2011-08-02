@@ -1,0 +1,15 @@
+{% extends 'CuteFlowCoreBundle:Mail:mail_layout.html.twig' %}
+
+{% block cuteflow_email_subject %}[CuteFlow] - {% trans %}Your account information{% endtrans %}{% endblock %}
+
+{% block cuteflow_email_body %}
+
+<p>{% trans%}Your CuteFlow account information{% endtrans %}:</p>
+<ul>
+    <li>{% trans%}Username{% endtrans %}: {{ user.username }}</li>
+    <li>{% trans%}Password{% endtrans %}: {{ user.plainPassword }}</li>
+</ul>
+<br/>
+{% trans %}Login{% endtrans %}: <a href="{{ homepage }}">{{ homepage }}</a>
+
+{% endblock %}

@@ -15,7 +15,7 @@
                         <ul>
                             <li>
                                 <a class="my-account" 
-                                   href="">
+                                   href="{{ path('cuteflow_my_account') }}">
                                     {% trans %}My account{% endtrans %}
                                 </a>
                             </li>
@@ -31,7 +31,7 @@
                 
                 {% if app.user %}
                     <div id="loggedas">
-                        {% trans %}Logged in as{% endtrans %} <a href="">{{ app.user.username }}</a>
+                        {% trans %}Logged in as{% endtrans %} <a href="{{ path('cuteflow_user_show', {'username': app.user.username}) }}">{{ app.user.username }}</a>
                     </div>
                 {% endif %}
 

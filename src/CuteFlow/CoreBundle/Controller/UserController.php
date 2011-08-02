@@ -78,9 +78,11 @@ class UserController extends Controller
     public function saveAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();
-        
+
+        $newUser = false;
         if ($id == -1) {
             $user = new User();
+            $newUser = true;
         }
         else {
             $user = $em->find('CuteFlowCoreBundle:User', $id);
@@ -94,6 +96,11 @@ class UserController extends Controller
         $userForm->bindRequest($this->getRequest());
 
         if ($userForm->isValid()) {
+
+            if ($newUser) {
+                $this->get('cuteflow.mailer')->sendWelcomeEmailMessage($user);
+            }
+
             $user_manager = $this->get('cuteflow.user_manager');
             $user_manager->updatePassword($user);
 

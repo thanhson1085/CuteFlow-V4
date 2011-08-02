@@ -198,6 +198,18 @@
                 <source>The password fields must match</source>
                 <target>Die Passwörter müssen übereinstimmen</target>
             </trans-unit>
+            <trans-unit id="50">
+                <source>Activity</source>
+                <target>Aktivität</target>
+            </trans-unit>
+            <trans-unit id="51">
+                <source>Registered on</source>
+                <target>Registriert am</target>
+            </trans-unit>
+            <trans-unit id="52">
+                <source>Information</source>
+                <target>Informationen</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

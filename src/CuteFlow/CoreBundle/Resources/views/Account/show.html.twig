@@ -1,0 +1,22 @@
+{% extends 'CuteFlowCoreBundle::layout.html.twig' %}
+
+{% block body %}
+<h2>
+    <img class="gravatar" width="50" height="50" src="{{ gravatar(user.email, 50) }}" />
+    {{ user.firstname }} {{ user.lastName }}
+</h2>
+<div class="splitcontentleft">
+    <h3>{% trans %}Information{% endtrans %}</h3>
+    <ul>
+        <li>{% trans %}Email{% endtrans %}: <a href="mailto:{{ user.email }}">{{ user.email }}</a></li>
+        <li>{% trans %}Registered on{% endtrans %}: {{ user.createdAt|localedate }}</li>
+        <li>{% trans %}Last login{% endtrans %}: {{ user.lastLogin|localedate }}</li>
+    </ul>
+</div>
+<div class="splitcontentright">
+    <h3>{% trans %}Activity{% endtrans %}</h3>
+</div>
+
+{% endblock %}
+
+{% block sidebarclass %}class="nosidebar"{% endblock %}

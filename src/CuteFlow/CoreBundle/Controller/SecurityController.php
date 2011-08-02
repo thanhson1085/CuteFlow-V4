@@ -38,6 +38,11 @@ class SecurityController extends Controller
             $error = $this->get('request')->getSession()->get(SecurityContext::AUTHENTICATION_ERROR);
         }
 
+        if (!$this->get('request')->getSession()->has('cuteflow_theme')) {
+            $defaultTheme = $this->get('cuteflow.settings_manager')->getSettings()->getDefaultTheme();
+            $this->get('request')->getSession()->set('cuteflow_theme', $defaultTheme);
+        }
+
         return array(
             'last_username' => $this->get('request')->getSession()->get(SecurityContext::LAST_USERNAME),
             'error'         => $error,

@@ -5,10 +5,10 @@
 
     {% stylesheets 
             '@CuteFlowCoreBundle/Resources/public/css/application.css'
-            '@CuteFlowCoreBundle/Resources/public/css/theme/modulaMojito/application.css'
     %}
         <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="all" />
     {% endstylesheets %}
+    <link rel="stylesheet" href="{{ asset("bundles/cuteflowcore/css/theme/" ~ app.session.get('cuteflow_theme') ~ "/application.css") }}" />
 {% endblock %}
 
 {% block sidebarclass %}class="nosidebar"{% endblock %}
