@@ -101,8 +101,10 @@ class UserController extends Controller
                 $this->get('cuteflow.mailer')->sendWelcomeEmailMessage($user);
             }
 
-            $user_manager = $this->get('cuteflow.user_manager');
-            $user_manager->updatePassword($user);
+            if ($user->getPlainPassword() != "") {
+                $user_manager = $this->get('cuteflow.user_manager');
+                $user_manager->updatePassword($user);
+            }
 
             $em->persist($user);
             $em->flush();

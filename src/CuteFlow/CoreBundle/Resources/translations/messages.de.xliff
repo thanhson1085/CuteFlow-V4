@@ -210,6 +210,46 @@
                 <source>Information</source>
                 <target>Informationen</target>
             </trans-unit>
+            <trans-unit id="53">
+                <source>Root-Path</source>
+                <target>Wurzelverzeichnis</target>
+            </trans-unit>
+            <trans-unit id="54">
+                <source>Database</source>
+                <target>Datenbank</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Reset Filter</source>
+                <target>Filter zurücksetzen</target>
+            </trans-unit>
+            <trans-unit id="56">
+                <source>Previous</source>
+                <target>Zurück</target>
+            </trans-unit>
+            <trans-unit id="57">
+                <source>Next</source>
+                <target>Weiter</target>
+            </trans-unit>
+            <trans-unit id="58">
+                <source>Encryption</source>
+                <target>Verschlüsselung</target>
+            </trans-unit>
+            <trans-unit id="59">
+                <source>Language</source>
+                <target>Sprache</target>
+            </trans-unit>
+            <trans-unit id="60">
+                <source>Theme</source>
+                <target>Thema</target>
+            </trans-unit>
+            <trans-unit id="61">
+                <source>Account successfully saved</source>
+                <target>Account erfolgreich gespeichert</target>
+            </trans-unit>
+            <trans-unit id="62">
+                <source>My Account</source>
+                <target>Mein Account</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

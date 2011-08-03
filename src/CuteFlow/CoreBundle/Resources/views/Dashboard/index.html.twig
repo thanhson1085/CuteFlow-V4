@@ -1,5 +1,7 @@
 {% extends 'CuteFlowCoreBundle::layout.html.twig' %}
 
+{% block title %}{{ parent() }} - {% trans %}Dashboard{% endtrans %}{% endblock %}
+
 {% block body %}
 <h2>{% trans %}Dashboard{% endtrans %}</h2>
 {% endblock %}

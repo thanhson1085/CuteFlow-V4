@@ -21,11 +21,11 @@ class SettingsGeneralType extends AbstractType
     {
         $builder->add('defaultLanguage', 'choice', array(
             'label'=>'Default language',
-            'choices'=>array('de'=>'Deutsch')
+            'choices'=>array('de'=>'Deutsch', 'en'=>"English")
         ));
         
         $builder->add('defaultTheme', 'choice', array(
-            'choices'=>array('default'=>'Default',
+            'choices'=>array(
                               'basecamp'=>'Basecamp',
                               'modulaMartini'=>'Modula Martini',
                               'modulaMojito'=>'Modula Mojito'),

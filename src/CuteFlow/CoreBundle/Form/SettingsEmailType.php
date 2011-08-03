@@ -24,10 +24,11 @@ class SettingsEmailType extends AbstractType
         ));
         $builder->add('emailFormat', 'choice', array(
             'choices'=>array('text/plain'=>'Plain', 'text/html'=>'HTML'),
-            'label'=>'E-Mail format'            
+            'label'=>'Email format'
         ));
         $builder->add('emailFooter', 'textarea', array(
-            'label'=>'Email footer'
+            'label'=>'Email footer',
+            'required'=>false,
         ));
         
         $builder->add('smtpHost', 'text', array(
@@ -37,17 +38,21 @@ class SettingsEmailType extends AbstractType
             'label'=>'Port'
         ));
         $builder->add('smtpUser', 'text', array(
-            'label'=>'Username'
+            'label'=>'Username',
+            'required'=>false,
         ));
         $builder->add('smtpPassword', 'password', array(
-            'label'=>'Password'
+            'label'=>'Password',
+            'required'=>false,
         ));
         $builder->add('smtpAuthentication', 'checkbox', array(
-            'label'=>'Authentification'
+            'label'=>'Authentication',
+            'required'=>false,
         ));
         $builder->add('smtpEncryption', 'choice', array(
             'choices'=>array('none'=>'None', 'ssl'=>'SSL', 'tls'=>'TLS'),
-            'label'=>'Encryption'
+            'label'=>'Encryption',
+            'required'=>false,
         ));
     }
 }

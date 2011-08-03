@@ -1,5 +1,7 @@
 {% extends 'CuteFlowCoreBundle::admin.html.twig' %}
 
+{% block title %}{{ parent() }} - {% trans %}Administration{% endtrans %}{% endblock %}
+
 {% block contextual %}
     <a class="icon icon-add" href="{{ path('cuteflow_admin_user_create') }}">{% trans %}New user{% endtrans %}</a>
 {% endblock %}

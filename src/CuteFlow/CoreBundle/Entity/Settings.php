@@ -12,6 +12,15 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Settings
 {
+    const USER_FORMAT_LONG_FL   = "fullname_fl";
+    const USER_FORMAT_LONG_LF   = "fullname_lf";
+    const USER_FORMAT_USERNAME  = "username";
+    const USER_FORMAT_FIRSTNAME = "firstname";
+    const USER_FORMAT_LASTNAME  = "lastname";
+
+    const MAIL_FORMAT_HTML      = "text/html";
+    const MAIL_FORMAT_PLAIN     = "text/plain";
+
     /**
      * @var integer $id
      *

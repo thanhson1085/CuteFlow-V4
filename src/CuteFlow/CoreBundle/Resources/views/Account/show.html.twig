@@ -1,5 +1,7 @@
 {% extends 'CuteFlowCoreBundle::layout.html.twig' %}
 
+{% block title %}{{ parent() }} - {% trans %}My Account{% endtrans %}{% endblock %}
+
 {% block body %}
 <h2>
     <img class="gravatar" width="50" height="50" src="{{ gravatar(user.email, 50) }}" />

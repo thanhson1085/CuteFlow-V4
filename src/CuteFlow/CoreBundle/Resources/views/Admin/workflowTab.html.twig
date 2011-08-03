@@ -1,7 +1,7 @@
-<div id="tab-content-workflow" class="tab-content" style="display: none;">
-    <form method="post" action="">
+<div id="tab-content-workflow" class="tab-content" {% if formType!='workflow' %}style="display: none;"{% endif %}>
+    <form method="post" action="{{ path('cuteflow_admin_settings_save', {'formType': 'workflow'}) }}">
         <div class="box tabular settings">
-            Workflow
+            {% trans %}Workflow{% endtrans %}
         </div>
 
         <input type="submit" value="{% trans %}Save{% endtrans %}" name="commit"/>

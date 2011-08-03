@@ -57,3 +57,36 @@
     git=http://github.com/symfony/AsseticBundle.git
     target=/bundles/Symfony/Bundle/AsseticBundle
     version=v1.0.0RC2
+
+[doctrine-fixtures]
+    git=http://github.com/doctrine/data-fixtures.git
+
+[DoctrineFixturesBundle]
+    git=http://github.com/symfony/DoctrineFixturesBundle.git
+    target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
+
+[doctrine-migrations]
+    git=http://github.com/doctrine/migrations.git
+
+[DoctrineMigrationsBundle]
+    git=http://github.com/symfony/DoctrineMigrationsBundle.git
+    target=/bundles/Symfony/Bundle/DoctrineMigrationsBundle
+
+[doctrine-extensions]
+    git=git://github.com/l3pp4rd/DoctrineExtensions.git
+    target=gedmo-doctrine-extensions
+
+[StofDoctrineExtensionsBundle]
+    git=http://github.com/stof/StofDoctrineExtensionsBundle.git
+    target=/bundles/Stof/Bundle/DoctrineExtensionsBundle
+
+[GravatarBundle]
+    git=https://github.com/ornicar/GravatarBundle.git
+    target=../src/Bundle/GravatarBundle
+
+[WhiteOctoberPagerFanta]
+    git=http://github.com/whiteoctober/Pagerfanta.git
+
+[WhiteOctoberPagerFantaBundle]
+    git=http://github.com/whiteoctober/WhiteOctoberPagerfantaBundle.git
+    target=/bundles/WhiteOctober/PagerfantaBundle

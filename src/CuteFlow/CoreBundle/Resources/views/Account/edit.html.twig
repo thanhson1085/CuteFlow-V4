@@ -1,0 +1,60 @@
+{% extends 'CuteFlowCoreBundle::layout.html.twig' %}
+
+{% block title %}{{ parent() }} - {% trans %}My Account{% endtrans %}{% endblock %}
+
+{% block body %}
+    <h2>{% trans %}My account{% endtrans %}</h2>
+
+    {% if form_errors(form) %}
+        <div class="flash error">
+            {{ form_errors(form) }}
+        </div>
+        <br/>
+	{% endif %}
+
+	{% if (app.session.hasFlash('saved.successful')) %}
+        <div class="flash notice">
+            {% trans %}Account successfully saved{% endtrans %}
+        </div>
+        <br/>
+    {% endif %}
+
+    <form method="post" action="{{ path('cuteflow_account_save') }}"
+        {{ form_enctype(form) }}>
+
+        <div class="box tabular settings">
+            <p>
+                <label>{% trans %}Username{% endtrans %}</label>
+                {{ user.username }}
+            </p>
+
+            <p>
+                {{ form_label(form.firstName) }}
+                {{ form_widget(form.firstName) }}
+            </p>
+            <p>
+                {{ form_label(form.lastName) }}
+                {{ form_widget(form.lastName) }}
+            </p>
+            <p>
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email) }}
+            </p>
+            {{ form_widget(form.plainPassword) }}
+            <p>
+                {{ form_label(form.locale) }}
+                {{ form_widget(form.locale) }}
+            </p>
+            <p>
+                {{ form_label(form.theme) }}
+                {{ form_widget(form.theme) }}
+            </p>
+        </div>
+
+        <input type="submit" value="{% trans %}Save{% endtrans %}" name="commit"/>
+        
+        {{ form_rest(form) }}
+    </form>
+{% endblock %}
+
+{% block sidebarclass %}class="nosidebar"{% endblock %}

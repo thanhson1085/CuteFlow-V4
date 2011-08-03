@@ -46,20 +46,63 @@ class AdminController extends Controller
             $settings = new \CuteFlow\CoreBundle\Entity\Settings();
         }
         
-        // Create the general form
         $localeNames = Locale::getDisplayLanguages($this->getRequest()->getSession()->getLocale());
-        $availableLanguages = array_intersect_key($localeNames, 
-                                $this->container->getParameter('cuteflow.languages'));        
-        
+        $availableLanguages = array_intersect_key($localeNames,
+                                $this->container->getParameter('cuteflow.languages'));
+
         $generalForm = $this->createForm(new SettingsGeneralType(), $settings);
-        
-        // create the email form
         $emailForm = $this->createForm(new SettingsEmailType(), $settings);
-        
-        // create the workflow form
-        
+
         return array('generalForm'=>$generalForm->createView(),
                      'emailForm'=>$emailForm->createView(),
+                     'formType'=>'general',
                      'availableLanguages'=>$availableLanguages);
+    }
+
+    /**
+     * @Route("/admin/settings/save/{formType}", name="cuteflow_admin_settings_save")
+     * @Template("CuteFlowCoreBundle:Admin:settings.html.twig")
+     * 
+     * @param string $formType
+     * @return void
+     */
+    public function saveSettings($formType)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $settings = $em->find('CuteFlowCoreBundle:Settings', 1);
+
+        if ($settings == null) {
+            $settings = new \CuteFlow\CoreBundle\Entity\Settings();
+        }
+
+        $localeNames = Locale::getDisplayLanguages($this->getRequest()->getSession()->getLocale());
+        $availableLanguages = array_intersect_key($localeNames,
+                                $this->container->getParameter('cuteflow.languages'));
+
+        $generalForm = $this->createForm(new SettingsGeneralType(), $settings);
+        $emailForm = $this->createForm(new SettingsEmailType(), $settings);
+
+        switch($formType) {
+            case 'email': $form = $emailForm; break;
+            case 'general': $form = $generalForm; break;
+        }
+
+        $success = false;
+        $form->bindRequest($this->getRequest());
+        if ($form->isValid()) {
+
+            $em->persist($settings);
+            $em->flush();
+
+            $success = true;
+        }
+
+        return array('generalForm'=>$generalForm->createView(),
+                     'emailForm'=>$emailForm->createView(),
+                     'availableLanguages'=>$availableLanguages,
+                     'formType'=>$formType,
+                     'saveSuccess'=>$success,
+                     'form'=>$form->createView());
     }
 }
