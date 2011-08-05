@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>account.dashboard</source>
+                <target>Dashboard</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>account.worklows</source>
+                <target>Workflows</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>account.reports</source>
+                <target>Reports</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>account.workflow_management</source>
+                <target>Workflow Management</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>account.my_account</source>
+                <target>My Account</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>account.sign_out</source>
+                <target>Sign Out</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>account.logged_in_as</source>
+                <target>Logged in as</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>account.home</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>account.administration</source>
+                <target>Administration</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>account.settings</source>
+                <target>Settings</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>account.filter</source>
+                <target>Filter</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>account.help</source>
+                <target>Help</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>account.user</source>
+                <target>User</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>account.system_information</source>
+                <target>System Information</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>account.user_interface</source>
+                <target>User Interface</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>account.default_language</source>
+                <target>Default language</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>account.default_theme</source>
+                <target>Default theme</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>account.user_format</source>
+                <target>Userformat</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>account.use_gravatar_user_icons</source>
+                <target>Use Gravatar user icons</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>account.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>account.workflow</source>
+                <target>Workflow</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>account.authentication</source>
+                <target>Authentication</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>account.general</source>
+                <target>General</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>account.workflow_groups</source>
+                <target>Workflow groups</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>account.host</source>
+                <target>Host</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>account.port</source>
+                <target>Port</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>account.username</source>
+                <target>Username</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>account.password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>account.emission_email_address</source>
+                <target>Emission email address</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>account.email_format</source>
+                <target>Email format</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>email_footer</source>
+                <target>Email footer</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>account.plain</source>
+                <target>Text</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>account.html</source>
+                <target>HTML</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>account.smtp_settings</source>
+                <target>SMTP-Settings</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>account.send_settings</source>
+                <target>Send-Settings</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>account.edit_user</source>
+                <target>Edit user</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>account.save</source>
+                <target>Save</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>account.back_to_list</source>
+                <target>Back to list</target>
+            </trans-unit>
+            <trans-unit id="39">
+                <source>account.user_successfully_saved</source>
+                <target>User successfully saved</target>
+            </trans-unit>
+            <trans-unit id="40">
+                <source>account.edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>account.delete</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="42">
+                <source>account.user_successfully_deleted</source>
+                <target>User successfully deleted</target>
+            </trans-unit>
+            <trans-unit id="43">
+                <source>account.do_you_really_want_to_delete_this_user?</source>
+                <target>Do you really want to delete this user?</target>
+            </trans-unit>
+            <trans-unit id="44">
+                <source>account.has_admin_rights</source>
+                <target>Has Admin-Rights</target>
+            </trans-unit>
+            <trans-unit id="45">
+                <source>account.firstname</source>
+                <target>Firstname</target>
+            </trans-unit>
+            <trans-unit id="46">
+                <source>account.lastname</source>
+                <target>Lastname</target>
+            </trans-unit>
+            <trans-unit id="47">
+                <source>account.last_login</source>
+                <target>Last login</target>
+            </trans-unit>
+            <trans-unit id="48">
+                <source>account.new_user</source>
+                <target>New user</target>
+            </trans-unit>
+            <trans-unit id="49">
+                <source>account.the_password_fields_must_match</source>
+                <target>The password fields must match</target>
+            </trans-unit>
+            <trans-unit id="50">
+                <source>account.activity</source>
+                <target>Activity</target>
+            </trans-unit>
+            <trans-unit id="51">
+                <source>account.registered_on</source>
+                <target>Registered on</target>
+            </trans-unit>
+            <trans-unit id="52">
+                <source>account.information</source>
+                <target>Information</target>
+            </trans-unit>
+            <trans-unit id="53">
+                <source>account.root_path</source>
+                <target>Root-Path</target>
+            </trans-unit>
+            <trans-unit id="54">
+                <source>account.database</source>
+                <target>Database</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>account.reset_filter</source>
+                <target>Reset Filter</target>
+            </trans-unit>
+            <trans-unit id="56">
+                <source>account.previous</source>
+                <target>Previous</target>
+            </trans-unit>
+            <trans-unit id="57">
+                <source>account.next</source>
+                <target>Next</target>
+            </trans-unit>
+            <trans-unit id="58">
+                <source>account.encryption</source>
+                <target>Encryption</target>
+            </trans-unit>
+            <trans-unit id="59">
+                <source>account.language</source>
+                <target>Language</target>
+            </trans-unit>
+            <trans-unit id="60">
+                <source>account.theme</source>
+                <target>Theme</target>
+            </trans-unit>
+            <trans-unit id="61">
+                <source>account.account_successfully_saved</source>
+                <target>Account successfully saved</target>
+            </trans-unit>
+            <trans-unit id="62">
+                <source>account.my_account</source>
+                <target>My Account</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
