@@ -11,25 +11,25 @@
     <li>
         <a class="{{ app.request.attributes.get('_route') == 'cuteflow_admin_index' ? 'selected' : '' }}" 
            href="{{ path('cuteflow_admin_index') }}">
-            {% trans %}System information{% endtrans %}
+            {{ "admin.system_information" | trans }}
         </a>
     </li>
     <li>
         <a class="{{ app.request.attributes.get('_route') == 'cuteflow_admin_user' ? 'selected' : '' }}" 
            href="{{ path('cuteflow_admin_user') }}">
-            {% trans %}User{% endtrans %}
+            {{ "admin.user" | trans }}
         </a>
     </li>
     <li>
         <a class="{{ app.request.attributes.get('_route') == 'cuteflow_usergroups' ? 'selected' : '' }}"
            href="{{ path('cuteflow_admin_usergroup')}}">
-            {% trans %}Usergroups{% endtrans %}
+            {{ "admin.workflow_groups" | trans }}
         </a>
     </li>
     <li>
         <a class="{{ app.request.attributes.get('_route') == 'cuteflow_admin_settings' ? 'selected' : '' }}" 
            href="{{ path('cuteflow_admin_settings') }}">
-            {% trans %}Settings{% endtrans %}
+            {{ "admin.settings" | trans }}
         </a>
     </li>
 </ul>

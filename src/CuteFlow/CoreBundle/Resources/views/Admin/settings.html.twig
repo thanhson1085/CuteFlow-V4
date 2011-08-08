@@ -1,21 +1,21 @@
 {% extends 'CuteFlowCoreBundle::admin.html.twig' %}
-{% block title %}{{ parent() }} - {% trans %}Settings{% endtrans %}{% endblock %}
+{% block title %}{{ parent() }} - {{ "admin.title.settings" | trans }}{% endblock %}
 
 {% block body %}
-<h2>{% trans %}Settings{% endtrans %}</h2>
+<h2>{{ "admin.header.settings" | trans }}</h2>
 
 <!-- Tab-Navigation -->
 <div class="tabs">
     <ul>
-        <li><a href="#" id="tab-general" {% if formType=='general' %}class="selected"{% endif %} onclick="showTab('general'); this.blur(); return false;">{% trans %}General{% endtrans %}</a></li>
-        <li><a href="#" id="tab-email" {% if formType=='email' %}class="selected"{% endif %} onclick="showTab('email'); this.blur(); return false;">{% trans %}E-Mail{% endtrans %}</a></li>
-        <li><a href="#" id="tab-workflow" {% if formType=='workflow' %}class="selected"{% endif %} onclick="showTab('workflow'); this.blur(); return false;">{% trans %}Workflow{% endtrans %}</a></li>
+        <li><a href="#" id="tab-general" {% if formType=='general' %}class="selected"{% endif %} onclick="showTab('general'); this.blur(); return false;">{{ "admin.label.general" | trans }}</a></li>
+        <li><a href="#" id="tab-email" {% if formType=='email' %}class="selected"{% endif %} onclick="showTab('email'); this.blur(); return false;">{{ "admin.label.email" | trans }}</a></li>
+        <li><a href="#" id="tab-workflow" {% if formType=='workflow' %}class="selected"{% endif %} onclick="showTab('workflow'); this.blur(); return false;">{{ "admin.label.workflow" | trans }}</a></li>
     </ul>
 </div>
 
 {% if saveSuccess is defined and saveSuccess==true %}
     <div class="flash notice">
-        {% trans %}Settings successfully saved{% endtrans %}
+        {{ "admin.message.settings_successfully_saved" | trans }}
     </div>
     <br/>
 {% endif %}

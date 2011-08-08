@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>basic.my_account</source>
+                <target>My Account</target>
+            </trans-unit>
+
+            <trans-unit id="2">
+                <source>basic.sign_out</source>
+                <target>Sign Out</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>basic.logged_in_as</source>
+                <target>Logged in as</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>basic.home</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>basic.administration</source>
+                <target>Administration</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>basic.help</source>
+                <target>Help</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>layout.dashboard</source>
+                <target>Dashboard</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>layout.workflows</source>
+                <target>Workflows</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>layout.reports</source>
+                <target>Reports</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>layout.workflow_management</source>
+                <target>Workflow Management</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>account.title.my_account</source>
+                <target>My Account</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>account.header.my_account</source>
+                <target>My Account</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>account.message.account_successfully_saved</source>
+                <target>Account successfully saved</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>account.label.username</source>
+                <target>Username</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>account.button.save</source>
+                <target>Save</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>account.header.information</source>
+                <target>Information</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>account.label.registered_on</source>
+                <target>Registered on</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>account.label.last_login</source>
+                <target>Last Login</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>account.header.activity</source>
+                <target>Activity</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>admin.title.smtp_settings</source>
+                <target>SMTP Settings</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>admin.title.send_settings</source>
+                <target>Send Settings</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>admin.button.save</source>
+                <target>Save</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>admin.title.settings</source>
+                <target>Settings</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>admin.label.general</source>
+                <target>General</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>admin.label.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>admin.label.workflow</source>
+                <target>Workflow</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>admin.message.settings_successfully_saved</source>
+                <target>Settings successfully saved</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>admin.title.system_information</source>
+                <target>System Information</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>admin.label.version</source>
+                <target>version</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>admin.label.php</source>
+                <target>PHP</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>admin.label.root_path</source>
+                <target>Root Path</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>admin.label.database</source>
+                <target>Database</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>admin.title.workflow</source>
+                <target>Workflow</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>admin.system_information</source>
+                <target>System Information</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>admin.user</source>
+                <target>User</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>admin.workflow_groups</source>
+                <target>Workflow Groups</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>admin.settings</source>
+                <target>Settings</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>dashboard.title.dashboard"</source>
+                <target>Dashboard"</target>
+            </trans-unit>
+            <trans-unit id="39">
+                <source>dashboard.header.dashboard</source>
+                <target>Dashboard</target>
+            </trans-unit>
+            <trans-unit id="40">
+                <source>mail.title.your_account_information</source>
+                <target>Your Account Information</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>mail.title.your_cuteflow_account_information</source>
+                <target>Your CuteFlow Accout Information</target>
+            </trans-unit>
+            <trans-unit id="42">
+                <source>mail.label.username</source>
+                <target>Username</target>
+            </trans-unit>
+            <trans-unit id="43">
+                <source>mail.label.password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="44">
+                <source>mail.label.login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="45">
+                <source>reports.title.reports</source>
+                <target>Reports</target>
+            </trans-unit>
+            <trans-unit id="46">
+                <source>reports.header.reports</source>
+                <target>Reports</target>
+            </trans-unit>
+            <trans-unit id="47">
+                <source>security.label.username</source>
+                <target>Username</target>
+            </trans-unit>
+            <trans-unit id="48">
+                <source>security.label.password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="49">
+                <source>security.label.remember_me</source>
+                <target>Remember me</target>
+            </trans-unit>
+            <trans-unit id="50">
+                <source>security.label.lost_password</source>
+                <target>Lost password</target>
+            </trans-unit>
+            <trans-unit id="51">
+                <source>user.title.administration</source>
+                <target>Administration</target>
+            </trans-unit>
+            <trans-unit id="52">
+                <source>user.header.edit_user</source>
+                <target>Edit User</target>
+            </trans-unit>
+            <trans-unit id="53">
+                <source>user.button.save</source>
+                <target>Save</target>
+            </trans-unit>
+            <trans-unit id="54">
+                <source>user.label.back_to_list</source>
+                <target>Back to list</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>user.header.user</source>
+                <target>User</target>
+            </trans-unit>
+            <trans-unit id="56">
+                <source>user.message.user_successfully_saved</source>
+                <target>User successfully saved</target>
+            </trans-unit>
+            <trans-unit id="57">
+                <source>user.label.firstname</source>
+                <target>Firstname</target>
+            </trans-unit>
+            <trans-unit id="58">
+                <source>user.label.lastname</source>
+                <target>Lastname</target>
+            </trans-unit>
+            <trans-unit id="59">
+                <source>user.label.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="60">
+                <source>user.label.username</source>
+                <target>Username</target>
+            </trans-unit>
+            <trans-unit id="61">
+                <source>user.label.administrator</source>
+                <target>Administrator</target>
+            </trans-unit>
+            <trans-unit id="62">
+                <source>user.label..last_login</source>
+                <target>Last login</target>
+            </trans-unit>
+            <trans-unit id="63">
+                <source>user.label.edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="64">
+                <source>user.message.do_you_really_want_to_delete_this_user?</source>
+                <target>Do you really want to delete this user?</target>
+            </trans-unit>
+            <trans-unit id="65">
+                <source>user.label.delete</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="66">
+                <source>user.header.filter</source>
+                <target>Filter</target>
+            </trans-unit>
+            <trans-unit id="67">
+                <source>user.button.filter</source>
+                <target>Filter</target>
+            </trans-unit>
+            <trans-unit id="68">
+                <source>user.button.reset_filter</source>
+                <target>Reset filter</target>
+            </trans-unit>
+            <trans-unit id="69">
+                <source>account.label.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="70">
+                <source>user.label.new_user</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="71">
+                <source>admin.header.settings</source>
+                <target>Settings</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

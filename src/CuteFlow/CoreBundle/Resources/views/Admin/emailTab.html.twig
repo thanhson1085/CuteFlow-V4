@@ -1,7 +1,7 @@
 <div id="tab-content-email" class="tab-content" {% if formType!='email' %}style="display: none;"{% endif %}>
     <form method="post" action="{{ path('cuteflow_admin_settings_save', {'formType': 'email'}) }}">
         <fieldset class="box tabular settings">
-            <legend>{% trans %}SMTP-Settings{% endtrans %}</legend>
+            <legend>{{ "admin.title.smtp_settings" | trans }}</legend>
             <p>
                 {{ form_label(emailForm.smtpHost) }}
                 {{ form_widget(emailForm.smtpHost) }}
@@ -28,7 +28,7 @@
             </p>
         </fieldset>
         <fieldset class="box tabular settings">
-            <legend>{% trans %}Send-Settings{% endtrans %}</legend>
+            <legend>{{ "admin.title.send_settings" | trans }}</legend>
             <p>
                 {{ form_label(emailForm.emissionMailAddress) }}
                 {{ form_widget(emailForm.emissionMailAddress) }}
@@ -45,6 +45,6 @@
 
         {{ form_rest(emailForm) }}
         
-        <input type="submit" value="{% trans %}Save{% endtrans %}" name="commit"/>
+        <input type="submit" value="{{ "admin.button.save" | trans }}" name="commit"/>
     </form>
 </div>

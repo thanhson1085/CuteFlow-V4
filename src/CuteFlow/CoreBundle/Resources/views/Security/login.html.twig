@@ -22,20 +22,20 @@
         <form action="{{ path("_security_check") }}" method="post" id="login">
             <table>
                 <tr>
-                    <td align="right"><label for="username">Username:</label></td>
+                    <td align="right"><label for="username">{{ "security.label.username" | trans }}</label></td>
                     <td align="left"><p><input type="text" id="username" name="_username" size="40" value="{{ last_username }}" /></p></td>
                 </tr>
                 <tr>
-                    <td align="right"><label for="password">Password:</label></td>
+                    <td align="right"><label for="password">{{ "security.label.password" | trans }}</label></td>
                     <td align="left"><p><input type="password" id="password" size="40" name="_password" /></p></td>
                 </tr>
                 <tr>
                     <td/>
                     <td align="left"><label for="remember_me"><input id="remember_me" type="checkbox" value="1" name="_remember_me"/>
-                            Remember me</label></td>
+                            {{ "security.label.remember_me" | trans }}</label></td>
                 </tr>
                 <tr>
-                    <td align="left"><a href="#">Lost password</a></td>
+                    <td align="left"><a href="#">{{ "security.label.lost_password" | trans }}</a></td>
                     <td align="right"><input type="submit" value="Login »"></td>
                 </tr>
             </table>
