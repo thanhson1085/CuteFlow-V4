@@ -1,9 +1,9 @@
 {% extends 'CuteFlowCoreBundle::layout.html.twig' %}
 
-{% block title %}{{ parent() }} - {% trans %}Dashboard{% endtrans %}{% endblock %}
+{% block title %}{{ parent() }} - {{ "dashboard.title.dashboard" | trans }}{% endblock %}
 
 {% block body %}
-<h2>{% trans %}Dashboard{% endtrans %}</h2>
+<h2>{{ "dashboard.header.dashboard" | trans }}</h2>
 {% endblock %}
 
 {% block sidebarclass %}class="nosidebar"{% endblock %}

@@ -16,13 +16,13 @@
                             <li>
                                 <a class="my-account" 
                                    href="{{ path('cuteflow_my_account') }}">
-                                    {% trans %}My account{% endtrans %}
+                                    {{ "basic.my_account" | trans }}
                                 </a>
                             </li>
                             <li>
                                 <a class="logout" 
                                    href="{{ path('cuteflow_logout') }}">
-                                     {% trans %}Sign out{% endtrans %}
+                                     {{ "basic.sign_out" | trans }}
                                 </a>
                             </li>
                         </ul>
@@ -31,16 +31,16 @@
                 
                 {% if app.user %}
                     <div id="loggedas">
-                        {% trans %}Logged in as{% endtrans %} <a href="{{ path('cuteflow_user_show', {'username': app.user.username}) }}">{{ app.user.username }}</a>
+                        {{ "basic.logged_in_as" | trans }} <a href="{{ path('cuteflow_user_show', {'username': app.user.username}) }}">{{ app.user.username }}</a>
                     </div>
                 {% endif %}
 
                 <ul>
-                    <li><a href="{{ path('cuteflow_dashboard') }}">{% trans %}Home{% endtrans %}</a></li>
+                    <li><a href="{{ path('cuteflow_dashboard') }}">{{ "basic.home" | trans }}</a></li>
                     {% if app.user and is_granted('ROLE_CUTEFLOW_ADMIN') %}
-                        <li><a href="{{ path('cuteflow_admin_index') }}">{% trans %}Administration{% endtrans %}</a></li>
+                        <li><a href="{{ path('cuteflow_admin_index') }}">{{ "basic.administration" | trans }}</a></li>
                     {% endif %}
-                    <li><a href="http://www.cuteflow.org/guide/v4">{% trans %}Help{% endtrans %}</a></li>
+                    <li><a href="http://www.cuteflow.org/guide/v4">{{ "basic.help" | trans }}</a></li>
                 </ul>
             </div>
             <div id="header">

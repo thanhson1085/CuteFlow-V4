@@ -1,24 +1,24 @@
 {% extends 'CuteFlowCoreBundle::admin.html.twig' %}
 
-{% block title %}{{ parent() }} - {% trans %}Administration{% endtrans %}{% endblock %}
+{% block title %}{{ parent() }} - {{ "user.title.administration" | trans }}{% endblock %}
 
 {% block contextual %}
-    <a class="icon icon-add" href="{{ path('cuteflow_admin_user_create') }}">{% trans %}New user{% endtrans %}</a>
+    <a class="icon icon-add" href="{{ path('cuteflow_admin_user_create') }}">{{ "user.label.new_user" | trans }}</a>
 {% endblock %}
 
 {% block body %}
-    <h2>{% trans %}User{% endtrans %}</h2>
+    <h2>{{ "user.header.user" | trans }}</h2>
 
     {% if (app.session.hasFlash('saved.successful')) %}
         <div class="flash notice">
-            {% trans %}User successfully saved{% endtrans %}
+            {{ "user.message.user_successfully_saved" | trans }}
         </div>
         <br/>
     {% endif %}
 
     {% if (app.session.hasFlash('deleted.successful')) %}
         <div class="flash notice">
-            {% trans %}User successfully deleted{% endtrans %}
+            {{ "user.message.user_successfully_saved" | trans }}
         </div>
         <br/>
     {% endif %}
@@ -27,12 +27,12 @@
       <thead>
         <tr>
           <th>&nbsp;</th>
-          <th>{% trans %}Firstname{% endtrans %}</th>
-          <th>{% trans %}Lastname{% endtrans %}</th>
-          <th>{% trans %}Email{% endtrans %}</th>
-          <th>{% trans %}Username{% endtrans %}</th>
-          <th>{% trans %}Administrator{% endtrans %}</th>
-          <th>{% trans %}Last login{% endtrans %}</th>
+          <th>{{ "user.label.firstname" | trans }}</th>
+          <th>{{ "user.label.lastname" | trans }}</th>
+          <th>{{ "user.label.email" | trans }}</th>
+          <th>{{ "user.label.username" | trans }}</th>
+          <th>{{ "user.label.administrator" | trans }}</th>
+          <th>{{ "user.label..last_login" | trans }}</th>
           <th>&nbsp;</th>
         </tr>
       </thead>
@@ -51,8 +51,8 @@
                 </td>
                 <td>{{ user.lastLogin | localedate() }}</td>
                 <td>
-                    <small><a href="{{ path('cuteflow_admin_user_edit', {'id': user.id}) }}" class="icon icon-edit">{% trans %}Edit{% endtrans %}</a></small>
-                    <small><a href="{{ path('cuteflow_admin_user_delete', {'id': user.id}) }}" onclick="return confirm('{% trans %}Do you really want to delete this user?{% endtrans %}')" class="icon icon-del">{% trans %}Delete{% endtrans %}</a></small>
+                    <small><a href="{{ path('cuteflow_admin_user_edit', {'id': user.id}) }}" class="icon icon-edit">{{ "user.label.edit" | trans }}</a></small>
+                    <small><a href="{{ path('cuteflow_admin_user_delete', {'id': user.id}) }}" onclick="return confirm('{{ "user.message.do_you_really_want_to_delete_this_user?" | trans }}')" class="icon icon-del">{{ "user.label.delete" | trans }}</a></small>
                 </td>
             </tr>
         {% endfor %}
@@ -64,13 +64,13 @@
 {% endblock %}
 
 {% block sidebar %}
-    <h3>{% trans %}Filter{% endtrans %}</h3>
+    <h3>{{ "user.header.filter" | trans }}</h3>
     <div class="filter">
         <form action="{{ path('cuteflow_admin_user', {'page': paginator.currentPage})}}" method="POST">
             {{ form_widget(filterForm) }}
 
-            <input type="submit" value="{% trans %}Filter{% endtrans %}"/>&nbsp;&nbsp;&nbsp;
-            <input type="button" value="Reset Filter"/>
+            <input type="submit" value="{{ "user.button.filter" | trans }}"/>&nbsp;&nbsp;&nbsp;
+            <input type="button" value="{{ "user.button.reset_filter" | trans }}"/>
       </form>
     </div>
 {% endblock %}

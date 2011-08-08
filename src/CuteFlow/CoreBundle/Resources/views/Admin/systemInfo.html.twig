@@ -1,25 +1,25 @@
 {% extends 'CuteFlowCoreBundle::admin.html.twig' %}
 
-{% block title %}{{ parent() }} - {% trans %}System information{% endtrans %}{% endblock %}
+{% block title %}{{ parent() }} - {{ "admin.title.system_information" | trans }}{% endblock %}
 
 {% block body %}
-<h2>{% trans %}System information{% endtrans %}</h2>
+<h2>{{ "admin.title.system_information" | trans }}</h2>
 
 <table class="list">
     <tr class="odd">
-        <td>{% trans %}Version{% endtrans %}</td>
+        <td>{{ "admin.label.version" | trans }}</td>
         <td>{{ version }}</td>
     </tr>
     <tr class="even">
-        <td>{% trans %}PHP{% endtrans %}</td>
+        <td>{{ "admin.label.php" | trans }}</td>
         <td>{{ phpVersion }}</td>
     </tr>
     <tr class="odd">
-        <td>{% trans %}Root-Path{% endtrans %}</td>
+        <td>{{ "admin.label.root_path" | trans }}</td>
         <td>{{ rootPath }}</td>
     </tr>
     <tr class="even">
-        <td>{% trans %}Database{% endtrans %}</td>
+        <td>{{ "admin.label.database" | trans }}</td>
         <td>{{ database }}</td>
     </tr>
 </table>

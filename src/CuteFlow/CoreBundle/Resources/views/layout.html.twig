@@ -5,25 +5,25 @@
     <li>
         <a class="{{ app.request.attributes.get('_route') == 'cuteflow_dashboard' ? 'selected' : '' }}" 
            href="{{ path('cuteflow_dashboard') }}">
-            {% trans %}Dashboard{% endtrans %}
+            {{ "layout.dashboard" | trans }}
         </a>
     </li>
     <li>
         <a class="{{ app.request.attributes.get('_route') == 'cuteflow_workflows' ? 'selected' : '' }}" 
            href="">
-            {% trans %}Workflows{% endtrans %}
+            {{ "layout.workflows" | trans }}
         </a>
     </li>
     <li>
         <a class="{{ app.request.attributes.get('_route') == 'cuteflow_reports_overview' ? 'selected' : '' }}" 
            href="{{ path('cuteflow_reports_overview') }}">
-            {% trans %}Reports{% endtrans %}
+            {{ "layout.reports" | trans }}
         </a>
     </li>
     <li>
         <a class="{{ app.request.attributes.get('_route') == 'cuteflow_workflow_management' ? 'selected' : '' }}" 
            href="">
-            {% trans %}Workflow Management{% endtrans %}
+            {{ "layout.workflow_management" | trans }}
         </a>
     </li>
 </ul>

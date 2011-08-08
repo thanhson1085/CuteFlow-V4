@@ -1,9 +1,9 @@
 {% extends 'CuteFlowCoreBundle::layout.html.twig' %}
 
-{% block title %}{{ parent() }} - {% trans %}My Account{% endtrans %}{% endblock %}
+{% block title %}{{ parent() }} - {{ "account.title.my_account" | trans }}{% endblock %}
 
 {% block body %}
-    <h2>{% trans %}My account{% endtrans %}</h2>
+    <h2>{{ "account.header.my_account" | trans }}</h2>
 
     {% if form_errors(form) %}
         <div class="flash error">
@@ -14,7 +14,7 @@
 
 	{% if (app.session.hasFlash('saved.successful')) %}
         <div class="flash notice">
-            {% trans %}Account successfully saved{% endtrans %}
+            {{ "account.message.account_successfully_saved" | trans }}
         </div>
         <br/>
     {% endif %}
@@ -24,7 +24,7 @@
 
         <div class="box tabular settings">
             <p>
-                <label>{% trans %}Username{% endtrans %}</label>
+                <label>{{ "account.label.username" | trans }}</label>
                 {{ user.username }}
             </p>
 
@@ -51,7 +51,7 @@
             </p>
         </div>
 
-        <input type="submit" value="{% trans %}Save{% endtrans %}" name="commit"/>
+        <input type="submit" value="{{ "account.button.save" | trans }}" name="commit"/>
         
         {{ form_rest(form) }}
     </form>

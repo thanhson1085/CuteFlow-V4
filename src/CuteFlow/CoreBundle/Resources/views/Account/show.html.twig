@@ -1,6 +1,6 @@
 {% extends 'CuteFlowCoreBundle::layout.html.twig' %}
 
-{% block title %}{{ parent() }} - {% trans %}My Account{% endtrans %}{% endblock %}
+{% block title %}{{ parent() }} - {{ "account.title.my_account" | trans }}{% endblock %}
 
 {% block body %}
 <h2>
@@ -8,15 +8,15 @@
     {{ user.firstname }} {{ user.lastName }}
 </h2>
 <div class="splitcontentleft">
-    <h3>{% trans %}Information{% endtrans %}</h3>
+    <h3>{{ "account.header.information" | trans }}</h3>
     <ul>
-        <li>{% trans %}Email{% endtrans %}: <a href="mailto:{{ user.email }}">{{ user.email }}</a></li>
-        <li>{% trans %}Registered on{% endtrans %}: {{ user.createdAt|localedate }}</li>
-        <li>{% trans %}Last login{% endtrans %}: {{ user.lastLogin|localedate }}</li>
+        <li>{{ "account.label.email" | trans }}: <a href="mailto:{{ user.email }}">{{ user.email }}</a></li>
+        <li>{{ "account.label.registered_on" | trans }}: {{ user.createdAt|localedate }}</li>
+        <li>{{ "account.label.last_login" | trans }}: {{ user.lastLogin|localedate }}</li>
     </ul>
 </div>
 <div class="splitcontentright">
-    <h3>{% trans %}Activity{% endtrans %}</h3>
+    <h3>{{ "account.header.activity" | trans }}</h3>
 </div>
 
 {% endblock %}
