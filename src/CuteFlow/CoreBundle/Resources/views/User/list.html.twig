@@ -45,7 +45,7 @@
       <tbody>
         {% for user in paginator %}
             <tr class="{{ cycle(['odd', 'even'], loop.index) }}">
-                <td><img class="gravatar" width="14" height="14" src="" /></td>
+                <td><img class="gravatar" width="14" height="14" src="{{ gravatar(user.email, 14) }}" /></td>
                 <td>{{ user.lastName }}</td>
                 <td>{{ user.firstName}}</td>
                 <td>{{ user.email}}</td>

@@ -128,7 +128,7 @@ class User implements UserInterface
      *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
      *      )
      */
-    public $groups;
+    protected $groups;
 
 
     /**
